@@ -21,7 +21,7 @@ if (header) {
   header.innerHTML = `
     <nav class="site-nav" aria-label="Primary navigation">
       <div class="container nav-inner">
-        <a class="brand" href="index.html">Md Ether Deowan</a>
+        <a class="brand" href="index.html"><span class="brand-mark">ED</span><span>Md Ether Deowan<small>Field Robotics · NTNU</small></span></a>
         <ul class="nav-links">${links}</ul>
       </div>
     </nav>`;
@@ -32,6 +32,6 @@ if (footer) {
   footer.innerHTML = `
     <div class="container footer-inner">
       <span>&copy; ${new Date().getFullYear()} Md Ether Deowan</span>
-      <span>Academic portfolio</span>
+      <span>PhD Candidate · Field Robotics Lab, NTNU</span>
     </div>`;
 }
