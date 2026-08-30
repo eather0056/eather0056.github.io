@@ -16,8 +16,12 @@ Source for the academic website of Md Ether Deowan.
 - `assets/images/` — profile, project, and research images
 - `assets/documents/` — public CV and publication documents
 
-The initial version intentionally contains placeholders. Personal, academic,
-publication, and project information will be added in a later content pass.
+Website content is stored in one structured source:
+`assets/data/site.json`. See [UPDATING.md](UPDATING.md) for short examples.
+
+Updating that file automatically updates the homepage, biography, research,
+projects, publications, CV, and contact pages. A GitHub Action validates every
+change before publication.
 
 ## Local preview
 

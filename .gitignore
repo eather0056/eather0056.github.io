@@ -3,3 +3,5 @@ Thumbs.db
 *.swp
 *.swo
 .vscode/
+# Keep the unredacted legacy CV local until a public-safe PDF is prepared.
+assets/documents/cv.pdf
