@@ -135,7 +135,7 @@
       "description": "An observation-only autonomy stack combining sonar occupancy mapping, clearance-aware global planning, behavior-tree-guided PPO, and a latent world model for dynamic underwater navigation.",
       "technologies": ["Isaac Sim", "PPO", "Behavior Trees", "Sonar Mapping", "World Models"],
       "url": "project.html?id=planning-learning-uuv",
-      "image": "assets/images/projects/research/planning-learning-uuv.jpg",
+      "image": "assets/images/projects/research/planning-learning-uuv.png",
       "imageAlt": "Unified planning and learning UUV navigation demonstration"
     },
     {
@@ -174,7 +174,7 @@
         "Underwater Robotics"
       ],
       "url": "project.html?id=mapless-uuv",
-      "image": "assets/images/projects/research/mapless-uuv.jpg",
+      "image": "assets/images/projects/research/mapless-uuv.png",
       "imageAlt": "Map-less underwater navigation demonstration"
     },
     {
