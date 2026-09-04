@@ -237,7 +237,9 @@
         "Node-RED",
         "Grafana",
         "MySQL"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/industry-4-0-remote-control-secure-o",
+      "archive": true
     },
     {
       "year": "2021–2022",
@@ -247,7 +249,9 @@
         "Siemens S7-1200",
         "RS-232",
         "PLC"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/epson-lq",
+      "archive": true
     },
     {
       "year": "2021–2022",
@@ -258,7 +262,9 @@
         "HMI",
         "STL",
         "Industrial Automation"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/projects-8",
+      "archive": true
     },
     {
       "year": "2021",
@@ -268,7 +274,9 @@
         "IoT",
         "Environmental Sensing",
         "Forecasting"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/iot-based-air-pollution-monitoring",
+      "archive": true
     },
     {
       "year": "2020–2021",
@@ -277,7 +285,9 @@
       "technologies": [
         "Python",
         "SQL"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/train-ticket-generator-using-python",
+      "archive": true
     },
     {
       "year": "2020–2021",
@@ -288,7 +298,68 @@
         "COMSOL",
         "CST",
         "Fusion 360"
-      ]
+      ],
+      "url": "https://mdether.wixsite.com/ether/uwd-near-field-microwave-imaging-system"
+    },
+    {
+      "year": "Earlier work", "title": "Perfume Injection for a Paper-Cutting Machine", "description": "Industrial automation concept integrating PLC control and a mechanically designed dispensing assembly for a paper-production process.", "technologies": ["TIA Portal", "PLC", "Fusion 360"], "url": "https://mdether.wixsite.com/ether/perfume-injector-for-paper-injector", "archive": true
+    },
+    {
+      "year": "2022", "title": "Smart Early Flood Detection", "description": "IoT prototype for sensing flood conditions, publishing measurements to ThingSpeak, and presenting warnings through a mobile application.", "technologies": ["Arduino", "ThingSpeak", "MIT App Inventor", "IoT"], "url": "https://mdether.wixsite.com/ether/fload-dectection", "archive": true
+    },
+    {
+      "year": "2022", "title": "Smart Medicine Dispenser", "description": "Connected medication dispenser intended to support scheduled dosing, reminders, and remote patient information through an integrated embedded and web system.", "technologies": ["Arduino", "IoT", "ThingSpeak", "Embedded Systems"], "url": "https://mdether.wixsite.com/ether/smart-medicine-box", "archive": true
+    },
+    {
+      "year": "2022–2023", "title": "IoT-based Smart Microgrid for Rural Areas", "description": "Renewable microgrid combining solar, wind, generator backup, remote monitoring, fault detection, and internet-based supervisory control.", "technologies": ["MATLAB/Simulink", "ThingSpeak", "MIT App Inventor", "Microgrid"], "url": "https://mdether.wixsite.com/ether/power-grid-controlling-and-monitoring", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "IoT All-in-One Utility Meter", "description": "A connected utility metering and management concept for consolidating consumption monitoring and remote access.", "technologies": ["IoT", "Energy Metering", "Embedded Systems"], "url": "https://mdether.wixsite.com/ether/iot-based-smart-all-in-one-utility-meter", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Mars Rover Control-Circuit Simulation", "description": "Proteus simulation and block-diagram development for a DIY rover control circuit, including library integration and code adaptation.", "technologies": ["Proteus", "Embedded Control", "Circuit Design"], "url": "https://mdether.wixsite.com/ether/mar", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Power-Grid Fault Analysis and Remote Monitoring", "description": "Simulation-oriented investigation of electrical-grid fault analysis with remote status monitoring.", "technologies": ["MATLAB/Simulink", "Power Systems", "Fault Detection"], "url": "https://mdether.wixsite.com/ether/power-grid-fault-analysis-and-remote-mon", "archive": true
+    },
+    {
+      "year": "2023", "title": "Agrivoltaic Farm with Transparent Solar Panels", "description": "Model-based integration of semi-transparent photovoltaics, agricultural land use, and grid protection/control concepts.", "technologies": ["MATLAB/Simulink", "Photovoltaics", "DOCR", "Agrivoltaics"], "url": "https://mdether.wixsite.com/ether/pv-farm-using-transfrent-solar-panel", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "COVID-19 Patient Health Monitoring", "description": "Embedded health-monitoring prototype developed and tested through circuit simulation, with associated implementation code.", "technologies": ["Proteus", "Health Monitoring", "Embedded Systems"], "url": "https://mdether.wixsite.com/ether/covid-patient-status-monitoring", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "24×6 Dot-Matrix Notice Board", "description": "Design, circuit simulation, PCB fabrication, and hardware implementation of an alphanumeric dot-matrix display system.", "technologies": ["PCB Design", "Embedded Systems", "Circuit Simulation"], "url": "https://mdether.wixsite.com/ether/dot-matrix-notice-board", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Aloe Vera Electrochemical Battery Array", "description": "Simulation of cascaded plant-electrolyte cells and power conversion toward a 240 V AC output concept.", "technologies": ["MATLAB/Simulink", "Energy Systems", "Power Electronics"], "url": "https://mdether.wixsite.com/ether/alo-vera-e-cell", "archive": true
+    },
+    {
+      "year": "2022", "title": "Elephant Intrusion Detection and Warning", "description": "Signal-processing and IoT system for detecting elephant presence and supporting warnings in rural human–wildlife conflict areas.", "technologies": ["Signal Processing", "IoT", "Embedded Sensing"], "url": "https://mdether.wixsite.com/ether/elephant-presence-detection-in-rural-ar", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "PID Control for a Mass–Spring System", "description": "Dynamic-system modelling and PID-controller design for reference tracking and response analysis.", "technologies": ["PID Control", "Dynamic Modelling", "MATLAB"], "url": "https://mdether.wixsite.com/ether/designing-of-pid-controller-for-mass-spr", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Human Voice Signal Processing and Analysis", "description": "Audio-signal processing project exploring the analysis and transformation of recorded human speech.", "technologies": ["Signal Processing", "Audio Analysis", "MATLAB"], "url": "https://mdether.wixsite.com/ether/process-and-analysis-human-voice-signal", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Three-Phase Line Fault Detection", "description": "MATLAB-based modelling and detection of fault conditions in three-phase electrical lines.", "technologies": ["MATLAB/Simulink", "Power Systems", "Protection"], "url": "https://mdether.wixsite.com/ether/three-phase-line-fault-detection-matlab", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Smart Mess Billing Workbook", "description": "Spreadsheet-based billing and record-management workflow for shared household expenses.", "technologies": ["Excel", "Data Management", "Automation"], "url": "https://mdether.wixsite.com/ether/smart-mess-billing-system-sheet-excel", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Dyeing-Machine Dosing System", "description": "Industrial automation work for controlling and monitoring chemical dosing in a textile dyeing process.", "technologies": ["PLC", "Process Control", "Industrial Automation"], "url": "https://mdether.wixsite.com/ether/dyeing-machine-dosing-system-on-going", "archive": true
+    },
+    {
+      "year": "Earlier work", "title": "Automated Quotation Generation", "description": "Excel and VBA workflow for generating standardized engineering and commercial quotations.", "technologies": ["Excel", "VBA", "Business Automation"], "url": "https://mdether.wixsite.com/ether/smart-quotation-generation-sheet-using", "archive": true
+    },
+    {
+      "year": "2021", "title": "Electrical Control-Panel Drawings", "description": "Production of industrial protection, control, and measurement-panel schematics and documentation.", "technologies": ["AutoCAD Electrical", "Control Panels", "Electrical Design"], "url": "https://mdether.wixsite.com/ether/electrical-drawing-of-control-panel", "archive": true
+    },
+    {
+      "year": "2021", "title": "Motor Encoder Installation for Steady Speed", "description": "Encoder retrofit and feedback-based speed stabilization for motors in an industrial dyeing process.", "technologies": ["Encoders", "Motor Control", "Industrial Maintenance"], "url": "https://mdether.wixsite.com/ether/encoder-installation-for-steady-speed", "archive": true
     }
   ],
   "publications": [
