@@ -8,3 +8,7 @@ assets/documents/cv.pdf
 
 # Private working documents: never publish these through GitHub Pages.
 private/
+
+# Local source material for project case studies; publish only reviewed assets.
+assets/documents/Autonomous Underwater Black Box Retrieval Using BlueROV2/
+assets/documents/bluerov2-black-box-retrieval-report.pdf
