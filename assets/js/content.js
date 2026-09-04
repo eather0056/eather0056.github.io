@@ -5,8 +5,10 @@ const period = (item) => `${escapeHtml(item.start)}–${escapeHtml(item.end)}`;
 const cleanTitle = (title) => title.replace(/^\[Task\]\s*/, "");
 
 function projectCard(project) {
-  const title = project.url ? externalLink(project.url, project.title) : escapeHtml(project.title);
-  return `<article class="card project-card"><p class="card-label">${escapeHtml(project.year)}</p><h2>${title}</h2><p>${escapeHtml(project.description)}</p><ul class="tag-list">${project.technologies.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></article>`;
+  const isExternal = project.url?.startsWith("http");
+  const title = project.url ? (isExternal ? externalLink(project.url, project.title) : `<a href="${escapeHtml(project.url)}">${escapeHtml(project.title)}</a>`) : escapeHtml(project.title);
+  const media = project.image ? `<a class="project-media" href="${escapeHtml(project.url || "#")}" aria-label="View ${escapeHtml(project.title)}"><img src="${escapeHtml(project.image)}" alt="${escapeHtml(project.imageAlt || "")}" loading="lazy"></a>` : "";
+  return `<article class="card project-card ${project.featured ? "project-card-featured" : ""}">${media}<div class="project-card-body"><p class="card-label">${escapeHtml(project.year)}</p><h2>${title}</h2><p>${escapeHtml(project.description)}</p><ul class="tag-list">${project.technologies.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>${!isExternal && project.url ? `<a class="project-read-more" href="${escapeHtml(project.url)}">Read technical case study <span aria-hidden="true">→</span></a>` : ""}</div></article>`;
 }
 
 function timeline(items, type) {

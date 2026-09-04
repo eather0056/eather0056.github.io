@@ -140,7 +140,10 @@
         "ArUco",
         "Control"
       ],
-      "url": "https://mdether.wixsite.com/ether/autonomous-underwater-black-box-retrieva"
+      "url": "project-bluerov2-retrieval.html",
+      "image": "assets/images/projects/bluerov2/system-architecture.png",
+      "imageAlt": "Architecture connecting the Unity simulator, ROS middleware, and the physical BlueROV2",
+      "featured": true
     },
     {
       "year": "2024–2025",

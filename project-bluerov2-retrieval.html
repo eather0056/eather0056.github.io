@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Technical case study of an autonomous underwater black-box retrieval system using BlueROV2, ROS, Unity, ArUco perception, PD control, a Newton Gripper, and behavior-tree autonomy.">
+    <title>Autonomous Black-Box Retrieval with BlueROV2 | Md Ether Deowan</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/main.js" defer></script>
+  </head>
+  <body data-page="projects">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header id="site-header"></header>
+
+    <main id="main-content">
+      <article class="case-study">
+        <header class="case-hero">
+          <div class="container">
+            <a class="case-back" href="projects.html">← All projects</a>
+            <div class="case-hero-grid">
+              <div>
+                <p class="eyebrow">Underwater robotics · 2025</p>
+                <h1>Autonomous Underwater Black-Box Retrieval</h1>
+                <p class="lead">An end-to-end BlueROV2 system that detects an ArUco-marked target, aligns and approaches under closed-loop control, grasps it with a Newton Gripper, and coordinates recovery through a behavior tree.</p>
+                <div class="button-row">
+                  <a class="button" href="https://github.com/eather0056/Autonomous-Underwater-Black-Box-Retrieval-Using-BlueROV2" target="_blank" rel="noreferrer">View source code ↗</a>
+                  <a class="button button-secondary" href="https://youtu.be/t4nXIaApkf0" target="_blank" rel="noreferrer">Watch second demo ↗</a>
+                </div>
+              </div>
+              <dl class="case-facts">
+                <div><dt>Role</dt><dd>System design, perception, control and integration</dd></div>
+                <div><dt>Collaborator</dt><dd>Akshat Sinha</dd></div>
+                <div><dt>Platforms</dt><dd>BlueROV2 · Unity · ROS/ROS 2</dd></div>
+                <div><dt>Validation</dt><dd>Simulation and controlled-water testing</dd></div>
+              </dl>
+            </div>
+          </div>
+        </header>
+
+        <section class="case-media-band">
+          <div class="container">
+            <div class="video-shell">
+              <iframe src="https://www.youtube-nocookie.com/embed/mVpci4n3xCk" title="Autonomous underwater black-box retrieval demonstration" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+
+        <nav class="case-nav" aria-label="On this page">
+          <div class="container">
+            <span>On this page</span>
+            <a href="#overview">Overview</a>
+            <a href="#architecture">Architecture</a>
+            <a href="#autonomy">Autonomy</a>
+            <a href="#control">Control</a>
+            <a href="#results">Results</a>
+            <a href="#resources">Resources</a>
+          </div>
+        </nav>
+
+        <section class="section" id="overview">
+          <div class="container case-copy-grid">
+            <div>
+              <p class="eyebrow">Overview</p>
+              <h2>From visual detection to physical recovery</h2>
+            </div>
+            <div class="case-prose">
+              <p>Underwater recovery is difficult because visibility, vehicle motion, currents, and manipulation uncertainty interact throughout the task. This project treats retrieval as one integrated autonomy problem rather than a set of disconnected demonstrations.</p>
+              <p>The pipeline uses an onboard camera and calibrated ArUco pose estimation to locate the target. A multi-axis PD controller regulates depth, lateral position, forward approach, and yaw. A behavior tree manages manual and autonomous modes, loss of visual contact, final blind approach, grasping, transport, and release.</p>
+            </div>
+          </div>
+          <div class="container case-stage-grid">
+            <article><span>01</span><h3>Detect</h3><p>Identify the marker and estimate target pose and distance.</p></article>
+            <article><span>02</span><h3>Align</h3><p>Regulate depth, lateral offset, forward motion, and yaw.</p></article>
+            <article><span>03</span><h3>Grasp</h3><p>Transition to close-range behavior and actuate the gripper.</p></article>
+            <article><span>04</span><h3>Recover</h3><p>Transport the secured target to a predefined recovery point.</p></article>
+          </div>
+        </section>
+
+        <section class="section section-muted" id="architecture">
+          <div class="container">
+            <div class="section-heading"><div><p class="eyebrow">System architecture</p><h2>One interface for simulation and hardware</h2></div></div>
+            <figure class="case-figure case-figure-wide">
+              <img src="assets/images/projects/bluerov2/system-architecture.png" alt="System architecture linking Unity, ROS control and video nodes, operator interfaces, and the physical BlueROV2" loading="lazy">
+              <figcaption>Unity and the physical vehicle share ROS communication, video, input, controller, and behavior-control interfaces.</figcaption>
+            </figure>
+            <div class="case-columns">
+              <article><h3>Perception</h3><p>Compressed camera frames are converted to grayscale and processed with OpenCV ArUco detection. Calibrated camera intrinsics support marker pose estimation; pose, range, and annotated imagery are published as ROS topics.</p></article>
+              <article><h3>Control</h3><p>Thruster commands map marker-relative errors into forward, lateral, vertical, and yaw motion. Gains can be adjusted from the operator GUI while vehicle telemetry and processed imagery are monitored in real time.</p></article>
+              <article><h3>Simulation</h3><p>A Unity environment and the Blue simulator reproduce the UJI pool, target, camera feedback, and manipulator geometry, enabling repeatable testing before controlled-water deployment.</p></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="autonomy">
+          <div class="container case-copy-grid">
+            <div><p class="eyebrow">Decision autonomy</p><h2>Behavior-tree task execution</h2></div>
+            <div class="case-prose"><p>The tree preserves operator control when needed while automating the repetitive and precision-sensitive phases. When the target is close or temporarily leaves the camera view, the system retains the last lateral and yaw references and enters a controlled blind approach. At less than 0.7 m, it initiates the grasp sequence before recovery.</p></div>
+          </div>
+          <div class="container">
+            <figure class="case-figure">
+              <img src="assets/images/projects/bluerov2/behavior-tree.png" alt="Behavior tree for detecting, approaching, grasping, recovering, and releasing the black box" loading="lazy">
+              <figcaption>High-level logic for manual assistance, ArUco-guided approach, gripper operation, and target recovery.</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="section section-muted" id="control">
+          <div class="container">
+            <div class="case-copy-grid"><div><p class="eyebrow">Closed-loop control</p><h2>Stability through tuned PD control</h2></div><div class="case-prose"><p>The uncontrolled response shows visible lateral and yaw oscillation. With tuned PD gains, the vehicle follows forward and depth references more closely while keeping lateral error and yaw near their targets. The plots below are presented as reported project evidence rather than a general performance guarantee.</p></div></div>
+            <div class="comparison-grid">
+              <figure class="case-figure"><img src="assets/images/projects/bluerov2/without-controller.png" alt="BlueROV2 pose response without a controller" loading="lazy"><figcaption>Without controller: oscillatory lateral and yaw response.</figcaption></figure>
+              <figure class="case-figure"><img src="assets/images/projects/bluerov2/with-controller.png" alt="BlueROV2 pose response with a tuned PD controller" loading="lazy"><figcaption>With tuned PD control: improved reference tracking and stability.</figcaption></figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="results">
+          <div class="container">
+            <div class="case-copy-grid"><div><p class="eyebrow">Reported results</p><h2>Controlled-condition performance</h2></div><div class="case-prose"><p>These results come from the project report’s simulation and controlled-water experiments. They should be interpreted within that scope: optimal or degraded lighting, approximately two metres initial range for timed recovery, and a mock target with a U-shaped handle.</p></div></div>
+            <div class="metrics-grid">
+              <article><strong>96%</strong><span>Marker detection</span><p>Reported under optimal lighting and clear visibility.</p></article>
+              <article><strong>88%</strong><span>Degraded detection</span><p>Reported in low-light or noisy conditions.</p></article>
+              <article><strong>65%</strong><span>Grasp success</span><p>Reported for real-world controlled tests.</p></article>
+              <article><strong>≈3 min</strong><span>Recovery time</span><p>Average from roughly two metres in controlled tests.</p></article>
+            </div>
+            <div class="limitations"><h3>Current limitations</h3><ul><li>ArUco-based perception depends on marker visibility, lighting, and camera calibration.</li><li>Grasping remains sensitive to pose noise and final alignment.</li><li>ROS 2 manipulator control requires further refinement for smoother joint motion.</li><li>Testing does not yet establish performance in deep water, strong currents, or open-water visibility.</li></ul><h3>Next steps</h3><ul><li>Fuse sonar or range sensing with vision for stronger localisation.</li><li>Improve grasp planning and support a wider range of target geometries.</li><li>Model stronger currents, turbidity, and hardware effects in simulation.</li><li>Extend validation from controlled tanks to representative field environments.</li></ul></div>
+          </div>
+        </section>
+
+        <section class="section case-resources" id="resources">
+          <div class="container">
+            <p class="eyebrow">Project resources</p><h2>Explore the implementation</h2>
+            <div class="resource-grid">
+              <a href="https://github.com/eather0056/Autonomous-Underwater-Black-Box-Retrieval-Using-BlueROV2" target="_blank" rel="noreferrer"><strong>Main repository</strong><span>ROS nodes, launch files, configuration and setup →</span></a>
+              <a href="https://github.com/eather0056/Telerobotics-and-HRI-Simulation-Server" target="_blank" rel="noreferrer"><strong>Unity simulation</strong><span>Simulation and ROS–TCP integration →</span></a>
+              <a href="https://github.com/nebverse/BlueDockerImage/pkgs/container/blue" target="_blank" rel="noreferrer"><strong>Blue simulator</strong><span>Containerized simulation environment →</span></a>
+            </div>
+            <h3 class="resource-video-title">Demonstrations</h3>
+            <div class="video-link-grid">
+              <a href="https://youtu.be/mVpci4n3xCk" target="_blank" rel="noreferrer">Retrieval demonstration 1 ↗</a>
+              <a href="https://youtu.be/t4nXIaApkf0" target="_blank" rel="noreferrer">Retrieval demonstration 2 ↗</a>
+              <a href="https://youtu.be/_7MyUX90p5Y" target="_blank" rel="noreferrer">ArUco marker follower ↗</a>
+              <a href="https://youtube.com/shorts/Ke21WYSxuU4" target="_blank" rel="noreferrer">Custom gripper arm ↗</a>
+              <a href="https://youtube.com/shorts/35pSupqHFNI" target="_blank" rel="noreferrer">Unity–ROS vehicle control ↗</a>
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer id="site-footer"></footer>
+  </body>
+</html>
