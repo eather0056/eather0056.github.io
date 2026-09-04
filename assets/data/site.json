@@ -1,5 +1,8 @@
 {
-  "meta": { "lastUpdated": "2026-08-30", "cvUpdated": "2026-08-30" },
+  "meta": {
+    "lastUpdated": "2026-09-04",
+    "cvUpdated": "2026-08-30"
+  },
   "profile": {
     "name": "Md Ether Deowan",
     "title": "PhD Candidate in Field Robotics",
@@ -16,64 +19,496 @@
     "supervisor": "Professor Eleni Kelasidi"
   },
   "links": [
-    { "label": "NTNU profile", "url": "https://www.ntnu.edu/employees/md.e.deowan" },
-    { "label": "Google Scholar", "url": "https://scholar.google.com/citations?user=q-8E8kIAAAAJ&hl=en" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/md-ether-deowan-787241172/" },
-    { "label": "GitHub", "url": "https://github.com/eather0056" },
-    { "label": "Legacy portfolio", "url": "https://mdether.wixsite.com/ether/s-projects-side-by-side" }
+    {
+      "label": "NTNU profile",
+      "url": "https://www.ntnu.edu/employees/md.e.deowan"
+    },
+    {
+      "label": "Google Scholar",
+      "url": "https://scholar.google.com/citations?user=q-8E8kIAAAAJ&hl=en"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/md-ether-deowan-787241172/"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/eather0056"
+    },
+    {
+      "label": "Legacy portfolio",
+      "url": "https://mdether.wixsite.com/ether/s-projects-side-by-side"
+    }
   ],
   "researchThemes": [
-    { "title": "Underwater robot autonomy", "description": "Robust navigation and decision-making for underwater vehicles operating with uncertain sensing and limited communication." },
-    { "title": "Multimodal perception and sensor fusion", "description": "Combining sonar, vision, Doppler, inertial, and other sensing modalities for localisation, mapping, and safe control." },
-    { "title": "Learning and model-based control", "description": "Reinforcement learning, predictive control, dynamic modelling, and hybrid autonomy for robotic systems." }
+    {
+      "title": "Underwater robot autonomy",
+      "description": "Robust navigation and decision-making for underwater vehicles operating with uncertain sensing and limited communication."
+    },
+    {
+      "title": "Multimodal perception and sensor fusion",
+      "description": "Combining sonar, vision, Doppler, inertial, and other sensing modalities for localisation, mapping, and safe control."
+    },
+    {
+      "title": "Learning and model-based control",
+      "description": "Reinforcement learning, predictive control, dynamic modelling, and hybrid autonomy for robotic systems."
+    }
   ],
   "experience": [
-    { "start": "2025", "end": "Present", "role": "PhD Candidate", "organization": "Field Robotics Lab, NTNU", "location": "Trondheim, Norway", "summary": "Researching navigation and decision autonomy for underwater and field robotic systems under the supervision of Professor Eleni Kelasidi." },
-    { "start": "2025-02", "end": "2025-07", "role": "Research Intern — Master's Thesis", "organization": "Laboratoire d’Informatique et Systèmes, University of Toulon", "location": "Toulon, France", "summary": "Investigated predictive control and dynamic modelling for chains of underwater robots and passive cable sections." },
-    { "start": "2024-06", "end": "2024-07", "role": "Summer Research Assistant", "organization": "Laboratoire d’Informatique et Systèmes", "location": "Toulon, France", "summary": "Developed reinforcement-learning and sensor-fusion methods for real-time underwater navigation." },
-    { "start": "2022-09", "end": "2023-08", "role": "Control Research Engineer", "organization": "Hi-Tech Bangla", "location": "Dhaka, Bangladesh", "summary": "Developed robotic manipulation systems, perception pipelines, and MATLAB-based real-time simulations." },
-    { "start": "2021-11", "end": "2022-08", "role": "Research and Development Engineer", "organization": "GreenTech Venture", "location": "Dhaka, Bangladesh", "summary": "Led PLC, HMI, industrial automation, and power-electronics integration projects." },
-    { "start": "2021-05", "end": "2021-10", "role": "Junior Engineer", "organization": "Lipy Paper Mill Limited", "location": "Narayanganj, Bangladesh", "summary": "Designed protection, control, measurement panels, and electrical schematics for industrial systems." }
+    {
+      "start": "2025",
+      "end": "Present",
+      "role": "PhD Candidate",
+      "organization": "Field Robotics Lab, NTNU",
+      "location": "Trondheim, Norway",
+      "summary": "Researching navigation and decision autonomy for underwater and field robotic systems under the supervision of Professor Eleni Kelasidi."
+    },
+    {
+      "start": "2025-02",
+      "end": "2025-07",
+      "role": "Research Intern — Master's Thesis",
+      "organization": "Laboratoire d’Informatique et Systèmes, University of Toulon",
+      "location": "Toulon, France",
+      "summary": "Investigated predictive control and dynamic modelling for chains of underwater robots and passive cable sections."
+    },
+    {
+      "start": "2024-06",
+      "end": "2024-07",
+      "role": "Summer Research Assistant",
+      "organization": "Laboratoire d’Informatique et Systèmes",
+      "location": "Toulon, France",
+      "summary": "Developed reinforcement-learning and sensor-fusion methods for real-time underwater navigation."
+    },
+    {
+      "start": "2022-09",
+      "end": "2023-08",
+      "role": "Control Research Engineer",
+      "organization": "Hi-Tech Bangla",
+      "location": "Dhaka, Bangladesh",
+      "summary": "Developed robotic manipulation systems, perception pipelines, and MATLAB-based real-time simulations."
+    },
+    {
+      "start": "2021-11",
+      "end": "2022-08",
+      "role": "Research and Development Engineer",
+      "organization": "GreenTech Venture",
+      "location": "Dhaka, Bangladesh",
+      "summary": "Led PLC, HMI, industrial automation, and power-electronics integration projects."
+    },
+    {
+      "start": "2021-05",
+      "end": "2021-10",
+      "role": "Junior Engineer",
+      "organization": "Lipy Paper Mill Limited",
+      "location": "Narayanganj, Bangladesh",
+      "summary": "Designed protection, control, measurement panels, and electrical schematics for industrial systems."
+    }
   ],
   "education": [
-    { "start": "2025", "end": "Present", "degree": "PhD in Field Robotics", "institution": "Norwegian University of Science and Technology", "location": "Norway" },
-    { "start": "2023", "end": "2025", "degree": "Erasmus Mundus Joint Master's in Marine and Maritime Intelligent Robotics", "institution": "University of Toulon and Jaume I University", "location": "France and Spain" },
-    { "start": "2018", "end": "2021", "degree": "BSc in Electrical and Electronics Engineering", "institution": "American International University-Bangladesh", "location": "Bangladesh", "detail": "CGPA 3.98/4.00, Summa Cum Laude" }
+    {
+      "start": "2025",
+      "end": "Present",
+      "degree": "PhD in Field Robotics",
+      "institution": "Norwegian University of Science and Technology",
+      "location": "Norway"
+    },
+    {
+      "start": "2023",
+      "end": "2025",
+      "degree": "Erasmus Mundus Joint Master's in Marine and Maritime Intelligent Robotics",
+      "institution": "University of Toulon and Jaume I University",
+      "location": "France and Spain"
+    },
+    {
+      "start": "2018",
+      "end": "2021",
+      "degree": "BSc in Electrical and Electronics Engineering",
+      "institution": "American International University-Bangladesh",
+      "location": "Bangladesh",
+      "detail": "CGPA 3.98/4.00, Summa Cum Laude"
+    }
   ],
   "projects": [
-    { "year": "2025", "title": "Autonomous Underwater Black Box Retrieval Using BlueROV2", "description": "A modular ROS 2 and Unity system combining ArUco-based detection, PD depth control, and behavior-tree decision logic for autonomous underwater retrieval.", "technologies": ["ROS 2", "Unity", "Behavior Trees", "ArUco", "Control"], "url": "https://mdether.wixsite.com/ether/autonomous-underwater-black-box-retrieva" },
-    { "year": "2024–2025", "title": "Advancing Map-less Underwater Navigation", "description": "A comparative investigation of A2C, PPO, and TRPO with multimodal sensor fusion and reward design for resilient low-cost underwater navigation.", "technologies": ["Reinforcement Learning", "Sensor Fusion", "PyTorch", "Underwater Robotics"], "url": "https://github.com/eather0056/BlueROV_Navigation_Control_with_Reinforcement_Learning" },
-    { "year": "2024", "title": "UR5 Robot Control and Object Manipulation", "description": "A UR5e and Robotiq 3-Finger Gripper framework using YOLO perception, inverse kinematics, trajectory planning, and MoveIt 2 for adaptive grasping.", "technologies": ["ROS 2", "YOLO", "MoveIt 2", "Manipulation"], "url": "https://github.com/eather0056/UR5-RobotGPT" },
-    { "year": "2024", "title": "Autonomous TurtleBot3 Navigation in a Maze", "description": "Multi-robot simulation with 2D SLAM, ROS 2 Navigation, custom Gazebo environments, and synchronized behaviors triggered by external signals.", "technologies": ["ROS 2", "Gazebo", "SLAM", "Navigation 2"] },
-    { "year": "2024", "title": "Dynamical Modelling of SCARA and Hexabot Robots", "description": "Kinematic and dynamic analysis using Denavit–Hartenberg parameters, homogeneous transforms, Jacobians, singularity analysis, MATLAB, and Simulink.", "technologies": ["MATLAB", "Simulink", "Robot Dynamics"], "url": "https://github.com/eather0056/Dynamical-Modeling-of-SCARA-Robot-and-Hexabot-Robot" },
-    { "year": "2024", "title": "Texture Classification and Semantic Analysis in Abstract Art", "description": "CLIP-based texture classification, sentiment analysis of viewer annotations, and correlation analysis between visual texture and emotional response.", "technologies": ["CLIP", "NLP", "Computer Vision", "Python"] },
-    { "year": "2022–2023", "title": "Industry 4.0 Remote Monitoring and Control", "description": "A secure remote industrial-control and analytics system using Siemens S7-1200, OPC, Node-RED, Raspberry Pi, MySQL, and Grafana.", "technologies": ["PLC", "OPC", "Node-RED", "Grafana", "MySQL"] },
-    { "year": "2021–2022", "title": "Epson LQ310 Integration with Siemens S7-1200", "description": "Industrial RS-232 integration and PLC logic for reliable automated printing, formatting, and process reporting.", "technologies": ["Siemens S7-1200", "RS-232", "PLC"] },
-    { "year": "2021–2022", "title": "Simplex 5 Series Conversion to a PLC System", "description": "Migration of a dyeing-machine interface and process logic to a Siemens S7-1200 and Comfort HMI with selectable process curves.", "technologies": ["Siemens S7-1200", "HMI", "STL", "Industrial Automation"] },
-    { "year": "2021", "title": "IoT Air-Pollution Monitoring and Forecasting", "description": "A real-time air-quality platform measuring particulate matter, gases, temperature, humidity, and pressure for monitoring and forecasting.", "technologies": ["IoT", "Environmental Sensing", "Forecasting"] },
-    { "year": "2020–2021", "title": "Railway Ticket Generator", "description": "Python and SQL software for ticket booking, passenger information, and transaction management.", "technologies": ["Python", "SQL"] },
-    { "year": "2020–2021", "title": "UWB Microwave Imaging for Lung Anomaly Detection", "description": "Simulation and imaging research using anatomical models to investigate non-invasive detection of lung-fluid anomalies.", "technologies": ["UWB Imaging", "COMSOL", "CST", "Fusion 360"] }
+    {
+      "year": "2025",
+      "title": "Autonomous Underwater Black Box Retrieval Using BlueROV2",
+      "description": "A modular ROS 2 and Unity system combining ArUco-based detection, PD depth control, and behavior-tree decision logic for autonomous underwater retrieval.",
+      "technologies": [
+        "ROS 2",
+        "Unity",
+        "Behavior Trees",
+        "ArUco",
+        "Control"
+      ],
+      "url": "https://mdether.wixsite.com/ether/autonomous-underwater-black-box-retrieva"
+    },
+    {
+      "year": "2024–2025",
+      "title": "Advancing Map-less Underwater Navigation",
+      "description": "A comparative investigation of A2C, PPO, and TRPO with multimodal sensor fusion and reward design for resilient low-cost underwater navigation.",
+      "technologies": [
+        "Reinforcement Learning",
+        "Sensor Fusion",
+        "PyTorch",
+        "Underwater Robotics"
+      ],
+      "url": "https://github.com/eather0056/BlueROV_Navigation_Control_with_Reinforcement_Learning"
+    },
+    {
+      "year": "2024",
+      "title": "UR5 Robot Control and Object Manipulation",
+      "description": "A UR5e and Robotiq 3-Finger Gripper framework using YOLO perception, inverse kinematics, trajectory planning, and MoveIt 2 for adaptive grasping.",
+      "technologies": [
+        "ROS 2",
+        "YOLO",
+        "MoveIt 2",
+        "Manipulation"
+      ],
+      "url": "https://github.com/eather0056/UR5-RobotGPT"
+    },
+    {
+      "year": "2024",
+      "title": "Autonomous TurtleBot3 Navigation in a Maze",
+      "description": "Multi-robot simulation with 2D SLAM, ROS 2 Navigation, custom Gazebo environments, and synchronized behaviors triggered by external signals.",
+      "technologies": [
+        "ROS 2",
+        "Gazebo",
+        "SLAM",
+        "Navigation 2"
+      ]
+    },
+    {
+      "year": "2024",
+      "title": "Dynamical Modelling of SCARA and Hexabot Robots",
+      "description": "Kinematic and dynamic analysis using Denavit–Hartenberg parameters, homogeneous transforms, Jacobians, singularity analysis, MATLAB, and Simulink.",
+      "technologies": [
+        "MATLAB",
+        "Simulink",
+        "Robot Dynamics"
+      ],
+      "url": "https://github.com/eather0056/Dynamical-Modeling-of-SCARA-Robot-and-Hexabot-Robot"
+    },
+    {
+      "year": "2024",
+      "title": "Texture Classification and Semantic Analysis in Abstract Art",
+      "description": "CLIP-based texture classification, sentiment analysis of viewer annotations, and correlation analysis between visual texture and emotional response.",
+      "technologies": [
+        "CLIP",
+        "NLP",
+        "Computer Vision",
+        "Python"
+      ]
+    },
+    {
+      "year": "2022–2023",
+      "title": "Industry 4.0 Remote Monitoring and Control",
+      "description": "A secure remote industrial-control and analytics system using Siemens S7-1200, OPC, Node-RED, Raspberry Pi, MySQL, and Grafana.",
+      "technologies": [
+        "PLC",
+        "OPC",
+        "Node-RED",
+        "Grafana",
+        "MySQL"
+      ]
+    },
+    {
+      "year": "2021–2022",
+      "title": "Epson LQ310 Integration with Siemens S7-1200",
+      "description": "Industrial RS-232 integration and PLC logic for reliable automated printing, formatting, and process reporting.",
+      "technologies": [
+        "Siemens S7-1200",
+        "RS-232",
+        "PLC"
+      ]
+    },
+    {
+      "year": "2021–2022",
+      "title": "Simplex 5 Series Conversion to a PLC System",
+      "description": "Migration of a dyeing-machine interface and process logic to a Siemens S7-1200 and Comfort HMI with selectable process curves.",
+      "technologies": [
+        "Siemens S7-1200",
+        "HMI",
+        "STL",
+        "Industrial Automation"
+      ]
+    },
+    {
+      "year": "2021",
+      "title": "IoT Air-Pollution Monitoring and Forecasting",
+      "description": "A real-time air-quality platform measuring particulate matter, gases, temperature, humidity, and pressure for monitoring and forecasting.",
+      "technologies": [
+        "IoT",
+        "Environmental Sensing",
+        "Forecasting"
+      ]
+    },
+    {
+      "year": "2020–2021",
+      "title": "Railway Ticket Generator",
+      "description": "Python and SQL software for ticket booking, passenger information, and transaction management.",
+      "technologies": [
+        "Python",
+        "SQL"
+      ]
+    },
+    {
+      "year": "2020–2021",
+      "title": "UWB Microwave Imaging for Lung Anomaly Detection",
+      "description": "Simulation and imaging research using anatomical models to investigate non-invasive detection of lung-fluid anomalies.",
+      "technologies": [
+        "UWB Imaging",
+        "COMSOL",
+        "CST",
+        "Fusion 360"
+      ]
+    }
   ],
   "publications": [
-    { "year": 2025, "title": "Symbolic Regression for Dynamic Tether Modeling in Underwater Robotics" },
-    { "year": 2025, "title": "Optimizing Underwater Robot Navigation: A Study of DRL Algorithms and Multi-Modal Sensor Fusion" },
-    { "year": 2023, "title": "Development of an Agro-Photovoltaic Transparent Solar Panel and DOCR for Agriculture and Grid System Usage" },
-    { "year": 2023, "title": "Human Lung Non-Invasive Anomaly Detection through UWB Microwave Imaging and Diagnosis of COVID-19: A Possible Application" },
-    { "year": 2023, "title": "A Simulation of a Robot Operating System Based Autonomous Wheelchair with Web Based HMI Using rosbridge", "doi": "https://doi.org/10.1109/ICREST57604.2023.10070046" },
-    { "year": 2023, "title": "Design and Analysis of IoT-Based Adaptive Microgrid System Including Renewable Energy Sources for Decentralized Zones" },
-    { "year": 2022, "title": "Study of UWB Near Field Microwave Imaging System for the Diagnosis of Lungs Damage Due to Fluid Accumulations", "doi": "https://doi.org/10.1109/ICONAT53423.2022.9726107" },
-    { "year": 2022, "title": "Smart Early Flood Monitoring System Using IoT" },
-    { "year": 2022, "title": "An Internet of Things (IoT)-Based Smart Automatic Medication Dispenser with an Integrated Web Application for Patient Diagnosis" },
-    { "year": 2022, "title": "A Warning and Detection System for Elephant Intrusions Utilizing Signal Processing and IoT" },
-    { "year": 2022, "title": "IoT Based Smart Refrigerator Monitoring System" },
-    { "year": 2022, "title": "A Study on the Aspects of 5G Implementation in Bangladesh" }
+    {
+      "year": 2026,
+      "title": "Unified Planning–Learning Framework for Robust UUV Navigation Under Partial Observability",
+      "authors": "Md Ether Deowan and Eleni Kelasidi",
+      "venue": "arXiv preprint, arXiv:2608.05365",
+      "status": "Preprint",
+      "links": [
+        {
+          "label": "Abstract",
+          "url": "https://arxiv.org/abs/2608.05365"
+        },
+        {
+          "label": "PDF",
+          "url": "https://arxiv.org/pdf/2608.05365"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "title": "Symbolic Regression for Dynamic Tether Modeling in Underwater Robotics",
+      "authors": "Md Ether Deowan, Martin Filliung, Nicolas Boizot, and Claire Dune",
+      "venue": "HAL open science archive, hal-05234077",
+      "status": "Research preprint",
+      "links": [
+        {
+          "label": "HAL record",
+          "url": "https://hal.science/hal-05234077"
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "title": "Optimizing Underwater Robot Navigation: A Study of DRL Algorithms and Multi-Modal Sensor Fusion",
+      "authors": "Md Ether Deowan, Md Shamin Yeasher Yousha, Tihan Mahmud Hossain, Shahriar Hassan, and Ricard Marxer",
+      "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA), pp. 11270–11277",
+      "status": "Conference paper",
+      "links": [
+        {
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2405.07189"
+        },
+        {
+          "label": "HAL record",
+          "url": "https://hal.science/hal-05004039"
+        },
+        {
+          "label": "DBLP",
+          "url": "https://dblp.org/rec/journals/corr/abs-2405-07189"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "title": "Development of an Agro-Photovoltaic Transparent Solar Panel and DOCR for Agriculture and Grid System Usage",
+      "authors": "Md Ether Deowan, Ahsan Kabir Nuhel, Md Jannatul Naim, Mir Mohibullah Sazid, Iftekhar Haider, Ferdous Alam, and Priyanka Roy",
+      "venue": "2023 Second International Conference on Electronics and Renewable Systems (ICEARS), pp. 7–12",
+      "status": "Conference paper",
+      "doi": "10.1109/ICEARS56392.2023.10084966",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICEARS56392.2023.10084966"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "title": "Human Lung Non-Invasive Anomaly Detection through UWB Microwave Imaging and Diagnosis of COVID-19: A Possible Application",
+      "authors": "Ahsan Kabir Nuhel, Md Ether Deowan, Mir Mohibullah Sazid, N. Sakib, M. E. Rahman, and M. Al Amin",
+      "venue": "2023 3rd International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), pp. 269–274",
+      "status": "Conference paper",
+      "doi": "10.1109/ICREST57604.2023.10070028",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICREST57604.2023.10070028"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "title": "A Simulation of a Robot Operating System Based Autonomous Wheelchair with Web Based HMI Using Rosbridge",
+      "authors": "Md Touhidul Islam, Imtiaz Reza Hameem, Shuvra Saha, Mohammad Jamilur Reza Chowdhury, and Md Ether Deowan",
+      "venue": "2023 3rd International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), pp. 175–180",
+      "status": "Conference paper",
+      "doi": "10.1109/ICREST57604.2023.10070046",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICREST57604.2023.10070046"
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "title": "Design and Analysis of IoT-Based Adaptive Microgrid System Including Renewable Energy Sources for Decentralized Zones",
+      "authors": "Md Ether Deowan, Ahsan Kabir Nuhel, Mir Mohibullah Sazid, Rehenuma Tabassum Meghla, Iftekhar Haider, and Md Rifat Hazari",
+      "venue": "2023 3rd International Conference on Robotics, Electrical and Signal Processing Techniques (ICREST), pp. 84–89",
+      "status": "Conference paper",
+      "doi": "10.1109/ICREST57604.2023.10070093",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICREST57604.2023.10070093"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "Study of UWB Near Field Microwave Imaging System for the Diagnosis of Lungs Damage Due to Fluid Accumulations",
+      "authors": "Md Ether Deowan, Ahsan Kabir Nuhel, Mohammed Shakawath Hossain, Aman Ullah, and Md Abdur Rahman",
+      "venue": "2022 International Conference for Advancement in Technology (ICONAT), pp. 1–6",
+      "status": "Conference paper",
+      "doi": "10.1109/ICONAT53423.2022.9726107",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICONAT53423.2022.9726107"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "Smart Early Flood Monitoring System Using IoT",
+      "authors": "Md Ether Deowan, Samirul Haque, Jahidul Islam, Md Hanjalayeamin, Md Touhidul Islam, and Rehenuma Tabassum Meghla",
+      "venue": "2022 14th Seminar on Power Electronics and Control (SEPOC), pp. 1–6",
+      "status": "Conference paper",
+      "doi": "10.1109/SEPOC54972.2022.9976434",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/SEPOC54972.2022.9976434"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "An Internet of Things (IoT)-Based Smart Automatic Medication Dispenser with an Integrated Web Application for Patient Diagnosis",
+      "authors": "Rehenuma Tabassum Meghla, Md Ether Deowan, Ahsan Kabir Nuhel, Mir Mohibullah Sazid, Md Nafiz Ekbal, and Mohammad Hossain Mahamud",
+      "venue": "2022 5th International Conference of Computer and Informatics Engineering (IC2IE), pp. 16–21",
+      "status": "Conference paper",
+      "doi": "10.1109/IC2IE56416.2022.9970073",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/IC2IE56416.2022.9970073"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "A Warning and Detection System for Elephant Intrusions Utilizing Signal Processing and IoT",
+      "authors": "Md Ether Deowan, Ahsan Kabir Nuhel, Iftekhar Haider, Md Ejaj Ahmed Al Mahdi Tusher, Mir Mohibullah Sazid, and Md Nafim Mahmud Bhuiyan",
+      "venue": "2022 4th International Conference on Electrical, Computer and Telecommunication Engineering (ICECTE), pp. 1–4",
+      "status": "Conference paper",
+      "doi": "10.1109/ICECTE57896.2022.10114507",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICECTE57896.2022.10114507"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "IoT Based Smart Refrigerator Monitoring System",
+      "authors": "Samirul Haque, Jahidul Islam, Md Ether Deowan, Towfiq Mahmud Mridul, Nafisa Tabassum, et al.",
+      "venue": "2022 IEEE 4th Global Power, Energy and Communication Conference (GPECOM), pp. 600–604",
+      "status": "Conference paper",
+      "doi": "10.1109/GPECOM55404.2022.9815821",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/GPECOM55404.2022.9815821"
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "title": "A Study on the Aspects of 5G Implementation in Bangladesh",
+      "authors": "Md Ether Deowan, Ahsan Kabir Nuhel, Mohammed Shakawath Hossain, Aman Ullah, and Shuvra Saha",
+      "venue": "2022 International Conference on Advancement in Electrical and Electronic Engineering (ICAEEE), pp. 1–6",
+      "status": "Conference paper",
+      "doi": "10.1109/ICAEEE54957.2022.9836365",
+      "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICAEEE54957.2022.9836365"
+        }
+      ]
+    }
   ],
   "skills": [
-    { "group": "Programming", "items": ["Python", "C", "C++", "MATLAB", "Bash", "Git"] },
-    { "group": "Robotics", "items": ["ROS", "ROS 2", "Gazebo", "MoveIt 2", "SLAM", "PX4", "ArduPilot"] },
-    { "group": "AI and perception", "items": ["PyTorch", "Reinforcement Learning", "Deep Learning", "Sensor Fusion", "3D Computer Vision"] },
-    { "group": "Control", "items": ["PID", "Model Predictive Control", "Kalman Filtering", "Dynamic Modelling"] },
-    { "group": "Automation", "items": ["Siemens PLC", "Schneider PLC", "SCADA", "HMI", "Industrial Communication"] }
+    {
+      "group": "Programming",
+      "items": [
+        "Python",
+        "C",
+        "C++",
+        "MATLAB",
+        "Bash",
+        "Git"
+      ]
+    },
+    {
+      "group": "Robotics",
+      "items": [
+        "ROS",
+        "ROS 2",
+        "Gazebo",
+        "MoveIt 2",
+        "SLAM",
+        "PX4",
+        "ArduPilot"
+      ]
+    },
+    {
+      "group": "AI and perception",
+      "items": [
+        "PyTorch",
+        "Reinforcement Learning",
+        "Deep Learning",
+        "Sensor Fusion",
+        "3D Computer Vision"
+      ]
+    },
+    {
+      "group": "Control",
+      "items": [
+        "PID",
+        "Model Predictive Control",
+        "Kalman Filtering",
+        "Dynamic Modelling"
+      ]
+    },
+    {
+      "group": "Automation",
+      "items": [
+        "Siemens PLC",
+        "Schneider PLC",
+        "SCADA",
+        "HMI",
+        "Industrial Communication"
+      ]
+    }
   ],
   "achievements": [
     "Erasmus Mundus scholarship for the Marine and Maritime Intelligent Robotics master's programme.",

@@ -30,10 +30,16 @@ function renderProjects(data) {
   contentRoot.innerHTML = `<section class="section"><div class="container"><p class="eyebrow">Projects</p><h1>Research and engineering projects</h1><p class="lead content-width">Selected work in underwater robotics, autonomous systems, perception, control, and industrial automation, ordered by year.</p><div class="project-list section-compact">${sorted.map(projectCard).join("")}</div></div></section>`;
 }
 
+function publicationCard(publication) {
+  const links = (publication.links || []).map((link) => externalLink(link.url, link.label)).join("");
+  const doi = publication.doi ? `<span class="publication-doi">DOI: ${escapeHtml(publication.doi)}</span>` : "";
+  return `<article class="publication-card"><div class="publication-meta"><span>${escapeHtml(publication.status || "Publication")}</span>${doi}</div><h3>${escapeHtml(publication.title)}</h3><p class="publication-authors">${escapeHtml(publication.authors || "")}</p><p class="publication-venue">${escapeHtml(publication.venue || "")}</p>${links ? `<div class="publication-links">${links}</div>` : ""}</article>`;
+}
+
 function renderPublications(data) {
   const groups = data.publications.reduce((all, item) => ((all[item.year] ||= []).push(item), all), {});
   const scholar = data.links.find((link) => link.label === "Google Scholar");
-  contentRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Publications</p><h1>Publications</h1><p>For complete citation and impact information, see ${externalLink(scholar.url, "Google Scholar")}.</p><div class="publication-groups">${Object.keys(groups).sort((a, b) => Number(b) - Number(a)).map((year) => `<section><h2>${year}</h2><ol class="publication-list">${groups[year].map((publication) => `<li>${publication.doi ? externalLink(publication.doi, publication.title) : escapeHtml(publication.title)}</li>`).join("")}</ol></section>`).join("")}</div></div></section>`;
+  contentRoot.innerHTML = `<section class="section"><div class="container"><div class="publication-header"><div><p class="eyebrow">Publications</p><h1>Research output</h1><p class="lead">Peer-reviewed conference papers and research preprints across underwater robotics, autonomous systems, sensing, IoT, and energy systems.</p></div><div class="scholar-card"><strong>${data.publications.length}</strong><span>listed works</span>${externalLink(scholar.url, "View Google Scholar →")}</div></div><div class="publication-groups">${Object.keys(groups).sort((a, b) => Number(b) - Number(a)).map((year) => `<section><h2>${year}</h2><div class="publication-list">${groups[year].map(publicationCard).join("")}</div></section>`).join("")}</div><p class="data-note">Citation metadata verified against publisher, DOI, HAL, arXiv, and bibliographic records. Google Scholar remains the source for live citation counts.</p></div></section>`;
 }
 
 function renderCv(data) {
