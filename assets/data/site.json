@@ -54,6 +54,122 @@
       "description": "Reinforcement learning, predictive control, dynamic modelling, and hybrid autonomy for robotic systems."
     }
   ],
+  "researchProgram": {
+    "title": "Autonomous Decision-Making for UUVs in Dynamic Environments",
+    "summary": "My PhD research develops decision and navigation methods for safe, mission-scale autonomy in visually degraded, uncertain, and dynamic underwater environments. The goal is to connect perception, mapping, planning, and control in one deployable autonomy stack for long-duration inspection and exploration.",
+    "context": "Underwater robots must operate despite turbidity, changing visibility, repetitive structures, moving obstacles, currents, uncertain sensing, limited communication, and finite energy. Rather than treating these challenges independently, this programme studies how uncertainty should shape every decision—from local collision avoidance to mission-level coverage.",
+    "period": "September 2025 – September 2028",
+    "environment": "Simulation → Marine Cybernetics Laboratory → FjordLab → sea-cage trials",
+    "application": "Autonomous inspection, maintenance, and repair in aquaculture and subsea environments",
+    "objectives": [
+      {
+        "code": "O1",
+        "title": "Safety-aware learning-based navigation",
+        "description": "Combine expert planners, imitation learning, reinforcement learning, and safety shields for collision-free navigation under sensing and control uncertainty.",
+        "methods": [
+          "Imitation learning",
+          "Reinforcement learning",
+          "Safety shields",
+          "Domain randomization"
+        ]
+      },
+      {
+        "code": "O2",
+        "title": "Coverage and active exploration",
+        "description": "Maximize inspection coverage and information gain while respecting currents, dynamic obstacles, restricted regions, and time and energy budgets.",
+        "methods": [
+          "Anytime planning",
+          "Receding horizon",
+          "Information gain",
+          "Energy-aware costs"
+        ]
+      },
+      {
+        "code": "O3",
+        "title": "Mapping for planning and reconstruction",
+        "description": "Create planning-grade semantic maps and incremental 3D reconstructions that support both immediate avoidance and global mission execution.",
+        "methods": [
+          "Sensor fusion",
+          "TSDF / ESDF",
+          "Semantic mapping",
+          "3D reconstruction"
+        ]
+      },
+      {
+        "code": "O4",
+        "title": "Probabilistic decision-making",
+        "description": "Propagate perception and model uncertainty into risk metrics, chance constraints, energy models, and confidence-aware fallback behaviours.",
+        "methods": [
+          "Belief states",
+          "Risk-aware planning",
+          "Partial observability",
+          "Uncertainty estimation"
+        ]
+      }
+    ],
+    "roadmap": [
+      {
+        "year": "2025–2026",
+        "focus": "Safe navigation and probabilistic autonomy",
+        "detail": "Establish the simulation-to-field pipeline, safety-aware learned navigation, and risk- and energy-aware decision models.",
+        "status": "Current"
+      },
+      {
+        "year": "2027",
+        "focus": "Coverage, exploration, and mapping",
+        "detail": "Develop semantic coverage planning, uncertainty-aware exploration, real-time mapping, and 3D reconstruction.",
+        "status": "Planned"
+      },
+      {
+        "year": "2028",
+        "focus": "Integration and open research outputs",
+        "detail": "Integrate the autonomy stack, complete field validation, and release reproducible methods, datasets, and evaluation resources where possible.",
+        "status": "Planned"
+      }
+    ],
+    "supervision": [
+      {
+        "name": "Professor Eleni Kelasidi",
+        "role": "Main supervisor",
+        "url": "https://www.ntnu.edu/employees/eleni.kelasidi"
+      },
+      {
+        "name": "Professor Martin Ludvigsen",
+        "role": "Co-supervisor",
+        "url": "https://www.ntnu.edu/employees/martin.ludvigsen"
+      }
+    ],
+    "students": [
+      {
+        "name": "Eirik Varnes",
+        "period": "2025–2026",
+        "project": "Robust Net Detection from Forward-Looking Sonar for Aquaculture Net-Pen Inspection",
+        "area": "Sonar perception"
+      },
+      {
+        "name": "Martina Butera",
+        "period": "2026–2027",
+        "project": "Online RL Policy Customization for Exploratory UUV Control",
+        "area": "Learning-based control"
+      },
+      {
+        "name": "Matre Ingrid Levin",
+        "period": "2026–2027",
+        "project": "Energy-Risk Coverage Planning for BlueROV2 Inspection Missions",
+        "area": "Mission planning"
+      }
+    ],
+    "studentProjectSpotlight": {
+      "title": "Energy-Risk Coverage Planning for BlueROV2 Inspection Missions",
+      "description": "An anytime, receding-horizon planning framework that balances inspection coverage, information gain, safety risk, and limited time and energy under uncertain, dynamic underwater conditions.",
+      "workPackages": [
+        "Uncertainty-aware occupancy and coverage maps",
+        "Multi-objective information, risk, and energy cost",
+        "Event-triggered replanning and mission constraints",
+        "Evaluation of coverage, safety, uncertainty, and energy use"
+      ]
+    }
+  },
   "experience": [
     {
       "start": "2025",
