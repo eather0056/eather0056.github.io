@@ -282,6 +282,29 @@
       ]
     },
     {
+      "year": 2026,
+      "date": "2026-08-05",
+      "title": "A Vision-based Control Framework for Real-time Autonomous UUV Operations",
+      "authors": "Erik Tjærand Frøland, Marco Job, Md Ether Deowan, and Eleni Kelasidi",
+      "venue": "arXiv preprint, arXiv:2608.04723",
+      "status": "Preprint",
+      "description": "A fully integrated vision-based framework for real-time UUV localisation, autonomous navigation, and continuous 3D mapping in dynamic, visually challenging environments, validated on synthetic ground-truth datasets and onboard an UUV during autonomous net-relative navigation experiments.",
+      "links": [
+        {
+          "label": "Abstract",
+          "url": "https://arxiv.org/abs/2608.04723"
+        },
+        {
+          "label": "PDF",
+          "url": "https://arxiv.org/pdf/2608.04723"
+        },
+        {
+          "label": "Google Scholar",
+          "url": "https://scholar.google.com/scholar?oi=bibs&cluster=7513251556491287560&btnI=1&hl=en"
+        }
+      ]
+    },
+    {
       "year": 2025,
       "title": "Symbolic Regression for Dynamic Tether Modeling in Underwater Robotics",
       "authors": "Md Ether Deowan, Martin Filliung, Nicolas Boizot, and Claire Dune",

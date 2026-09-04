@@ -33,7 +33,7 @@ function renderProjects(data) {
 function publicationCard(publication) {
   const links = (publication.links || []).map((link) => externalLink(link.url, link.label)).join("");
   const doi = publication.doi ? `<span class="publication-doi">DOI: ${escapeHtml(publication.doi)}</span>` : "";
-  return `<article class="publication-card"><div class="publication-meta"><span>${escapeHtml(publication.status || "Publication")}</span>${doi}</div><h3>${escapeHtml(publication.title)}</h3><p class="publication-authors">${escapeHtml(publication.authors || "")}</p><p class="publication-venue">${escapeHtml(publication.venue || "")}</p>${links ? `<div class="publication-links">${links}</div>` : ""}</article>`;
+    return `<article class="publication-card"><div class="publication-meta"><span>${escapeHtml(publication.status || "Publication")}</span>${doi}</div><h3>${escapeHtml(publication.title)}</h3><p class="publication-authors">${escapeHtml(publication.authors || "")}</p><p class="publication-venue">${escapeHtml(publication.venue || "")}</p>${publication.description ? `<p class="publication-description">${escapeHtml(publication.description)}</p>` : ""}${links ? `<div class="publication-links">${links}</div>` : ""}</article>`;
 }
 
 function renderPublications(data) {

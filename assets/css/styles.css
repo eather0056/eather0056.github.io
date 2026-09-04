@@ -300,6 +300,7 @@ h3 { font-size: 1.35rem; }
 .publication-doi { color: var(--text-muted); letter-spacing: 0; text-transform: none; }
 .publication-authors { margin: 0 0 0.35rem; font-weight: 650; }
 .publication-venue { margin: 0; color: var(--text-muted); font-style: italic; }
+.publication-description { margin: 0.8rem 0 0; color: var(--text-muted); }
 .publication-links { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1rem; }
 .publication-links a { padding: 0.3rem 0.7rem; border: 1px solid var(--accent); border-radius: 999px; font-size: 0.78rem; font-weight: 750; text-decoration: none; }
 
