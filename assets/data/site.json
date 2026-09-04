@@ -130,6 +130,24 @@
   ],
   "projects": [
     {
+      "year": "2026",
+      "title": "Unified Planning–Learning for UUV Navigation",
+      "description": "An observation-only autonomy stack combining sonar occupancy mapping, clearance-aware global planning, behavior-tree-guided PPO, and a latent world model for dynamic underwater navigation.",
+      "technologies": ["Isaac Sim", "PPO", "Behavior Trees", "Sonar Mapping", "World Models"],
+      "url": "project.html?id=planning-learning-uuv",
+      "image": "assets/images/projects/research/planning-learning-uuv.jpg",
+      "imageAlt": "Unified planning and learning UUV navigation demonstration"
+    },
+    {
+      "year": "2026",
+      "title": "Vision-based Control for Real-time UUV Operations",
+      "description": "A fully onboard pipeline for net-relative and global localisation, autonomous net following, dense monocular depth, and continuous volumetric mapping in aquaculture environments.",
+      "technologies": ["ROS", "TRUDepth", "FFT Perception", "Wavemap", "BlueROV2"],
+      "url": "project.html?id=vision-uuv",
+      "image": "assets/images/projects/research/vision-uuv.jpg",
+      "imageAlt": "Vision-based autonomous BlueROV2 experiment"
+    },
+    {
       "year": "2025",
       "title": "Autonomous Underwater Black Box Retrieval Using BlueROV2",
       "description": "A modular ROS 2 and Unity system combining ArUco-based detection, PD depth control, and behavior-tree decision logic for autonomous underwater retrieval.",
@@ -155,7 +173,9 @@
         "PyTorch",
         "Underwater Robotics"
       ],
-      "url": "https://github.com/eather0056/BlueROV_Navigation_Control_with_Reinforcement_Learning"
+      "url": "project.html?id=mapless-uuv",
+      "image": "assets/images/projects/research/mapless-uuv.jpg",
+      "imageAlt": "Map-less underwater navigation demonstration"
     },
     {
       "year": "2024",
@@ -167,7 +187,9 @@
         "MoveIt 2",
         "Manipulation"
       ],
-      "url": "https://github.com/eather0056/UR5-RobotGPT"
+      "url": "project.html?id=ur5-manipulation",
+      "image": "https://img.youtube.com/vi/i5nVuVOmrVQ/hqdefault.jpg",
+      "imageAlt": "UR5 robot perception and manipulation demonstration"
     },
     {
       "year": "2024",
@@ -178,7 +200,10 @@
         "Gazebo",
         "SLAM",
         "Navigation 2"
-      ]
+      ],
+      "url": "project.html?id=turtlebot-maze",
+      "image": "assets/images/projects/turtlebot/rviz.png",
+      "imageAlt": "RViz map and TurtleBot3 navigation visualization"
     },
     {
       "year": "2024",
