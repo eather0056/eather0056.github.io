@@ -121,7 +121,7 @@
     },
     {
       "start": "2018",
-      "end": "2021",
+      "end": "2022",
       "degree": "BSc in Electrical and Electronics Engineering",
       "institution": "American International University-Bangladesh",
       "location": "Bangladesh",
@@ -136,7 +136,8 @@
       "technologies": ["Isaac Sim", "PPO", "Behavior Trees", "Sonar Mapping", "World Models"],
       "url": "project.html?id=planning-learning-uuv",
       "image": "assets/images/projects/research/planning-learning-uuv.png",
-      "imageAlt": "Unified planning and learning UUV navigation demonstration"
+      "imageAlt": "Unified planning and learning UUV navigation demonstration",
+      "featured": true
     },
     {
       "year": "2026",
@@ -145,7 +146,8 @@
       "technologies": ["ROS", "TRUDepth", "FFT Perception", "Wavemap", "BlueROV2"],
       "url": "project.html?id=vision-uuv",
       "image": "assets/images/projects/research/vision-uuv.jpg",
-      "imageAlt": "Vision-based autonomous BlueROV2 experiment"
+      "imageAlt": "Vision-based autonomous BlueROV2 experiment",
+      "featured": true
     },
     {
       "year": "2025",
@@ -175,7 +177,8 @@
       ],
       "url": "project.html?id=mapless-uuv",
       "image": "assets/images/projects/research/mapless-uuv.png",
-      "imageAlt": "Map-less underwater navigation demonstration"
+      "imageAlt": "Map-less underwater navigation demonstration",
+      "featured": true
     },
     {
       "year": "2024",
@@ -189,7 +192,8 @@
       ],
       "url": "project.html?id=ur5-manipulation",
       "image": "https://img.youtube.com/vi/i5nVuVOmrVQ/hqdefault.jpg",
-      "imageAlt": "UR5 robot perception and manipulation demonstration"
+      "imageAlt": "UR5 robot perception and manipulation demonstration",
+      "featured": true
     },
     {
       "year": "2024",
@@ -203,7 +207,8 @@
       ],
       "url": "project.html?id=turtlebot-maze",
       "image": "assets/images/projects/turtlebot/rviz.png",
-      "imageAlt": "RViz map and TurtleBot3 navigation visualization"
+      "imageAlt": "RViz map and TurtleBot3 navigation visualization",
+      "featured": true
     },
     {
       "year": "2024",
