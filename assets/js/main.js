@@ -4,6 +4,7 @@ const navigation = [
   ["research", "Research", "research.html"],
   ["publications", "Publications", "publications.html"],
   ["projects", "Projects", "projects.html"],
+  ["learning", "Learning", "learning.html"],
   ["cv", "CV", "cv.html"],
   ["contact", "Contact", "contact.html"],
 ];

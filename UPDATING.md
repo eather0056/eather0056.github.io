@@ -70,3 +70,14 @@ pull request.
 - Put public images in `assets/images/` and reference them with relative paths.
 - Do not publish home addresses, private phone numbers, references' contact
   details, unpublished results, or confidential project information.
+
+
+## Add a learning resource
+
+1. Place reviewed public assets in `assets/learning/<lesson-slug>/`. Never link directly to working files under `assets/documents/`.
+2. Add one entry to the `learning` array in `assets/data/site.json`.
+3. Create the lesson page, using `learning-kalman-filter.html` as the structural template.
+4. Add the page URL to `sitemap.xml`.
+5. Run `python3 scripts/validate_site.py` and preview both desktop and mobile layouts before publishing.
+
+Only publish notebooks after checking outputs and metadata for private paths, credentials, unpublished results, or personal information.

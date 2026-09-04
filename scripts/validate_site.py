@@ -19,7 +19,7 @@ with DATA_FILE.open(encoding="utf-8") as stream:
 with PROJECT_DETAILS_FILE.open(encoding="utf-8") as stream:
     project_details = json.load(stream)
 
-require(data, ["meta", "profile", "links", "researchThemes", "experience", "education", "projects", "publications", "skills"], "site.json")
+require(data, ["meta", "profile", "links", "researchThemes", "learning", "experience", "education", "projects", "publications", "skills"], "site.json")
 require(data["profile"], ["name", "title", "affiliation", "email", "tagline", "bio"], "profile")
 
 for index, project in enumerate(data["projects"]):
@@ -27,6 +27,13 @@ for index, project in enumerate(data["projects"]):
 
 for index, publication in enumerate(data["publications"]):
     require(publication, ["year", "title"], f"publications[{index}]")
+
+for index, lesson in enumerate(data["learning"]):
+    require(lesson, ["slug", "title", "description", "level", "duration", "topics", "image", "url", "notebook", "colab"], f"learning[{index}]")
+    for field in ("image", "url", "notebook"):
+        target = ROOT / lesson[field]
+        if not target.is_file():
+            raise ValueError(f"learning[{index}].{field} does not exist: {lesson[field]}")
 
 for project_id, project in project_details.items():
     require(project, ["year", "kicker", "title", "summary", "facts", "overview", "stages", "limitations", "links"], f"project-details[{project_id}]")
@@ -36,6 +43,7 @@ for project_id, project in project_details.items():
 print(
     f"Validated {len(data['projects'])} projects, "
     f"{len(data['publications'])} publications, and "
-    f"{len(data['experience'])} experience entries, and "
+    f"{len(data['experience'])} experience entries, "
+    f"{len(data['learning'])} learning resource(s), and "
     f"{len(project_details)} technical case studies."
 )

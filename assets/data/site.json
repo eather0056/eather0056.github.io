@@ -91,6 +91,26 @@
       }
     ]
   },
+  "learning": [
+    {
+      "slug": "kalman-filter-robot-lab",
+      "title": "Learning State Estimation Through One Robot",
+      "subtitle": "A practical Kalman filter and observer lab",
+      "description": "Build intuition for state estimation by applying linear and extended Kalman filters, observability analysis, and deterministic observers to one simulated robot.",
+      "level": "Intermediate",
+      "duration": "60–90 min",
+      "topics": [
+        "Kalman Filters",
+        "Extended Kalman Filters",
+        "Observability",
+        "State Estimation"
+      ],
+      "image": "assets/learning/kalman-filter-robot-lab/all_estimators_rmse_comparison.gif",
+      "url": "learning-kalman-filter.html",
+      "notebook": "assets/learning/kalman-filter-robot-lab/kalman_filter_robot_lab.ipynb",
+      "colab": "https://colab.research.google.com/github/eather0056/eather0056.github.io/blob/main/assets/learning/kalman-filter-robot-lab/kalman_filter_robot_lab.ipynb"
+    }
+  ],
   "experience": [
     {
       "start": "2025",

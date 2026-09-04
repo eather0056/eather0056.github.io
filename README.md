@@ -9,6 +9,7 @@ Source for the academic website of Md Ether Deowan.
 - `research.html` — research statement and themes
 - `publications.html` — papers and scholarly outputs
 - `projects.html` — research and engineering projects
+- `learning.html` — practical tutorials and executable notebooks
 - `cv.html` — curriculum vitae
 - `contact.html` — institutional contact and profiles
 - `assets/css/` — shared visual styling
