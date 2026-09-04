@@ -29,7 +29,7 @@ for index, publication in enumerate(data["publications"]):
     require(publication, ["year", "title"], f"publications[{index}]")
 
 for index, lesson in enumerate(data["learning"]):
-    require(lesson, ["slug", "title", "description", "level", "duration", "topics", "image", "url", "notebook", "colab"], f"learning[{index}]")
+    require(lesson, ["slug", "title", "description", "level", "duration", "topics", "image", "url", "notebook"], f"learning[{index}]")
     for field in ("image", "url", "notebook"):
         target = ROOT / lesson[field]
         if not target.is_file():

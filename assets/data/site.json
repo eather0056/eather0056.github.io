@@ -107,8 +107,7 @@
       ],
       "image": "assets/learning/kalman-filter-robot-lab/all_estimators_rmse_comparison.gif",
       "url": "learning-kalman-filter.html",
-      "notebook": "assets/learning/kalman-filter-robot-lab/kalman_filter_robot_lab.ipynb",
-      "colab": "https://colab.research.google.com/github/eather0056/eather0056.github.io/blob/main/assets/learning/kalman-filter-robot-lab/kalman_filter_robot_lab.ipynb"
+      "notebook": "assets/learning/kalman-filter-robot-lab/kalman_filter_robot_lab.ipynb"
     }
   ],
   "experience": [
