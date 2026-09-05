@@ -15,5 +15,5 @@ function renderProject(project) {
 const projectId = new URLSearchParams(window.location.search).get("id");
 fetch("assets/data/project-details.json")
   .then((response) => { if (!response.ok) throw new Error(`Could not load project data (${response.status})`); return response.json(); })
-  .then((projects) => { if (!projects[projectId]) throw new Error("Project not found"); renderProject(projects[projectId]); })
+  .then((projects) => { if (!projects[projectId]) throw new Error("Project not found"); renderProject(projects[projectId]); window.initScrollReveal?.(projectRoot); })
   .catch((error) => { projectRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Projects</p><h1>Project unavailable</h1><p>${safe(error.message)}.</p><a href="projects.html">Return to all projects</a></div></section>`; });
