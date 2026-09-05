@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-09-04",
+    "lastUpdated": "2026-09-05",
     "cvUpdated": "2026-08-30"
   },
   "profile": {
@@ -691,6 +691,23 @@
         "HMI",
         "Industrial Communication"
       ]
+    }
+  ],
+  "professionalService": [
+    {
+      "role": "Reviewer",
+      "organization": "IEEE Robotics and Automation Letters (RA-L)",
+      "year": "2026"
+    },
+    {
+      "role": "Reviewer",
+      "organization": "IFAC World Congress (IFAC WC)",
+      "year": "2026"
+    },
+    {
+      "role": "Reviewer",
+      "organization": "IEEE Robotics and Automation Society (RAS) conference review activities",
+      "year": "2026"
     }
   ],
   "achievements": [

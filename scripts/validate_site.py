@@ -19,7 +19,7 @@ with DATA_FILE.open(encoding="utf-8") as stream:
 with PROJECT_DETAILS_FILE.open(encoding="utf-8") as stream:
     project_details = json.load(stream)
 
-require(data, ["meta", "profile", "links", "researchThemes", "learning", "experience", "education", "projects", "publications", "skills"], "site.json")
+require(data, ["meta", "profile", "links", "researchThemes", "learning", "experience", "education", "projects", "publications", "skills", "professionalService"], "site.json")
 require(data["profile"], ["name", "title", "affiliation", "email", "tagline", "bio"], "profile")
 
 for index, project in enumerate(data["projects"]):
@@ -27,6 +27,9 @@ for index, project in enumerate(data["projects"]):
 
 for index, publication in enumerate(data["publications"]):
     require(publication, ["year", "title"], f"publications[{index}]")
+
+for index, service in enumerate(data["professionalService"]):
+    require(service, ["role", "organization", "year"], f"professionalService[{index}]")
 
 for index, lesson in enumerate(data["learning"]):
     require(lesson, ["slug", "title", "description", "level", "duration", "topics", "image", "url", "notebook"], f"learning[{index}]")
