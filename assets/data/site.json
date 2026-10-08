@@ -62,12 +62,15 @@
       {
         "name": "Professor Eleni Kelasidi",
         "role": "Main supervisor",
-        "url": "https://www.ntnu.edu/employees/eleni.kelasidi"
+        "url": "https://www.ntnu.edu/employees/eleni.kelasidi",
+        "affiliation": "Field Robotics Lab · NTNU"
       },
       {
         "name": "Professor Martin Ludvigsen",
         "role": "Co-supervisor",
-        "url": "https://www.ntnu.edu/employees/martin.ludvigsen"
+        "url": "https://www.ntnu.edu/employees/martin.ludvigsen",
+        "affiliation": "Department of Marine Technology · NTNU",
+        "affiliationUrl": "https://www.ntnu.edu/imt"
       }
     ],
     "students": [
