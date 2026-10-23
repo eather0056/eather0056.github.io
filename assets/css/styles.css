@@ -809,3 +809,15 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
   .talk-card h3 { font-size: 17px; }
   .sidebar-affiliation a { font-size: 11px; }
 }
+
+/* Evidence-led research summaries for reviewers and research collaborators. */
+.research-highlights { display: grid; gap: 16px; margin-top: 20px; }
+.research-highlight { padding: 18px 20px; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; }
+.research-highlight h3 { margin: 0 0 8px; line-height: 1.4; }
+.research-highlight h3 a { color: var(--text); }
+.research-highlight p { margin: 0 0 10px; font-size: 15px; }
+.research-highlight .highlight-venue { color: var(--accent); font: 600 12px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.highlight-venue span { color: var(--text-muted); font-weight: 400; }
+.research-highlight .highlight-evidence { padding-top: 10px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 14px; }
+.research-direction-intro { color: var(--text-muted); }
+.case-authors { max-width: 850px; color: #d7e5e2; font-size: 14px; }

@@ -20,7 +20,7 @@ with DATA_FILE.open(encoding="utf-8") as stream:
 with PROJECT_DETAILS_FILE.open(encoding="utf-8") as stream:
     project_details = json.load(stream)
 
-require(data, ["meta", "profile", "links", "researchThemes", "learning", "experience", "education", "projects", "publications", "skills", "professionalService", "talks", "achievements"], "site.json")
+require(data, ["meta", "profile", "links", "researchThemes", "learning", "experience", "education", "projects", "publications", "skills", "professionalService", "talks", "achievements", "researchHighlights"], "site.json")
 require(data["profile"], ["name", "title", "affiliation", "email", "tagline", "bio", "headline", "institution", "institutionUrl", "supervisor", "supervisorUrl"], "profile")
 
 for index, project in enumerate(data["projects"]):
@@ -46,6 +46,14 @@ for index, theme in enumerate(data["researchThemes"]):
         expected_url = "project-bluerov2-retrieval.html" if project_id == "bluerov2-retrieval" else f"project.html?id={project_id}"
         if not any(project.get("url") == expected_url for project in data["projects"]):
             raise ValueError(f"researchThemes[{index}] links to unknown project {project_id}")
+
+for index, highlight in enumerate(data["researchHighlights"]):
+    require(highlight, ["title", "venue", "role", "summary", "evidence", "url"], f"researchHighlights[{index}]")
+    if not any(project.get("url") == highlight["url"] for project in data["projects"]):
+        raise ValueError(f"researchHighlights[{index}] links to an unknown project")
+
+for index, direction in enumerate(data["researchProgram"]["directions"]):
+    require(direction, ["title", "description"], f"researchProgram.directions[{index}]")
 
 for index, lesson in enumerate(data["learning"]):
     require(lesson, ["slug", "title", "description", "level", "duration", "topics", "image", "url", "notebook"], f"learning[{index}]")

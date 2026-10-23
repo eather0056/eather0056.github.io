@@ -11,14 +11,14 @@
     "department": "Department of Mechanical and Industrial Engineering",
     "location": "Trondheim, Norway",
     "email": "md.e.deowan@ntnu.no",
-    "tagline": "Robust field autonomy for underwater inspection, maintenance, and repair.",
+    "tagline": "Learning, prediction, and planning for robust robotic autonomy, grounded in underwater inspection and intervention.",
     "bio": [
-      "I am a PhD candidate in the Field Robotics Lab at the Norwegian University of Science and Technology (NTNU), supervised by Professor Eleni Kelasidi. I research navigation and decision autonomy for underwater robots, with a focus on inspection, maintenance, and repair (IMR) operations in uncertain, dynamic environments.",
-      "My work connects multimodal perception and state estimation with motion planning, reinforcement learning, and model-based control. Recent projects investigate sonar-based mapping and planning–learning navigation, onboard vision for autonomous UUV operations, and behaviour-tree mission execution for underwater retrieval.",
-      "I hold an Erasmus Mundus Joint Master’s in Marine and Maritime Intelligent Robotics from the University of Toulon and Jaume I University, and a BSc in Electrical and Electronics Engineering from AIUB. My Master’s research at LIS in Toulon examined predictive control and dynamic modelling of underwater robot chains and passive cables, building on earlier work in sensor fusion, reinforcement learning, robotic manipulation, and industrial automation."
+      "I am a PhD candidate in the Field Robotics Lab at the Norwegian University of Science and Technology (NTNU), supervised by Professor Eleni Kelasidi. I study how robots can make reliable decisions when sensing is degraded and dynamics are uncertain, using underwater inspection, maintenance, and repair (IMR) as a demanding application domain.",
+      "My research connects multimodal perception, predictive models, motion planning, and reinforcement learning. My first-author work at IROS 2026 and ICRA 2025 investigates hybrid planning–learning and sensor-fusion-based navigation. I also co-authored an IFAC 2026 framework for onboard UUV perception, localisation, and control, and contributed work on tether dynamics to an IEEE CASE workshop.",
+      "I hold an Erasmus Mundus Joint Master’s in Marine and Maritime Intelligent Robotics from the University of Toulon and Jaume I University, and a BSc in Electrical and Electronics Engineering from AIUB. My background combines underwater robot dynamics and predictive control with robotic manipulation and industrial automation."
     ],
     "supervisor": "Professor Eleni Kelasidi",
-    "headline": "Robust autonomy for underwater robots.",
+    "headline": "Robot learning and planning under uncertainty.",
     "institution": "Norwegian University of Science and Technology (NTNU)",
     "institutionUrl": "https://www.ntnu.no/",
     "supervisorUrl": "https://www.ntnu.no/ansatte/eleni.kelasidi"
@@ -41,8 +41,38 @@
       "url": "https://github.com/eather0056"
     },
     {
+      "label": "MATLAB Central",
+      "url": "https://www.mathworks.com/matlabcentral/profile/authors/14909287"
+    },
+    {
       "label": "Legacy portfolio",
       "url": "https://mdether.wixsite.com/ether/s-projects-side-by-side"
+    }
+  ],
+  "researchHighlights": [
+    {
+      "title": "Hybrid planning–learning navigation",
+      "venue": "IROS 2026",
+      "role": "First author",
+      "summary": "Sonar mapping and clearance-aware planning coupled to behaviour-tree-guided PPO and a one-step latent model.",
+      "evidence": "87% task success versus 20% without distillation in fixed-policy simulation (5 seeds × 5 trials per method).",
+      "url": "project.html?id=planning-learning-uuv"
+    },
+    {
+      "title": "Onboard perception and control",
+      "venue": "IFAC 2026",
+      "role": "Co-author",
+      "summary": "A vision-based autonomy pipeline connecting net-relative localisation, dense depth, mapping, and autonomous net following.",
+      "evidence": "FFT perception and TRUDepth evaluated at 10 Hz on Jetson AGX Orin, with UUV laboratory experiments.",
+      "url": "project.html?id=vision-uuv"
+    },
+    {
+      "title": "Learning to navigate with multimodal sensing",
+      "venue": "ICRA 2025",
+      "role": "First author",
+      "summary": "A comparative study of deep reinforcement learning, visual depth, range sensing, and domain randomisation for map-less navigation.",
+      "evidence": "94% success for TRPO with sensor fusion and Depth Anything in the reported simulation evaluation.",
+      "url": "project.html?id=mapless-uuv"
     }
   ],
   "researchThemes": [
@@ -64,8 +94,8 @@
   ],
   "researchProgram": {
     "title": "Autonomous Decision-Making for UUVs in Dynamic Environments",
-    "summary": "My PhD research explores how underwater robots can navigate and make reliable decisions in uncertain, dynamic environments, with emphasis on safe autonomy for inspection and exploration.",
-    "context": "Underwater environments challenge robotic systems with changing visibility, uncertain sensing, currents, repetitive structures, and moving obstacles. My work investigates how perception, planning, and control can be connected to improve reliable autonomous operation.",
+    "summary": "I investigate learning and planning under partial observability: how robots can use imperfect observations and predictive models to navigate reliably in dynamic environments. Underwater inspection and intervention provide the primary testbed for connecting perception, decision-making, and control.",
+    "context": "Poor visibility, sonar artefacts, uncertain dynamics, and moving obstacles can make a robot’s internal model unreliable. My research connects multimodal sensing with hybrid planning–learning architectures and studies how uncertainty should influence navigation and mission-level decisions. Current evidence spans controlled simulation and collaborative onboard UUV experiments; reliable transfer to changing field conditions remains a research goal.",
     "supervision": [
       {
         "name": "Professor Eleni Kelasidi",
@@ -94,14 +124,27 @@
         "period": "2026–2027",
         "project": "Online RL Policy Customization for Exploratory UUV Control",
         "area": "Learning-based control"
+      }
+    ],
+    "directions": [
+      {
+        "title": "Predictive models for decision-making",
+        "description": "Investigate temporal belief representations and action-conditioned prediction that help distinguish sensing failures from unfamiliar dynamics."
       },
       {
-        "name": "Matre Ingrid Levin",
-        "period": "2026–2027",
-        "project": "Energy-Risk Coverage Planning for BlueROV2 Inspection Missions",
-        "area": "Mission planning"
+        "title": "Risk-aware planning and learning",
+        "description": "Study how calibrated uncertainty, hierarchical planning, and conservative fallback actions can improve decisions under partial observability."
+      },
+      {
+        "title": "Mission-scale inspection and exploration",
+        "description": "Investigate coverage and active-exploration planning that connects uncertainty-aware maps with time, energy, and mission constraints."
+      },
+      {
+        "title": "Simulation-to-field evaluation",
+        "description": "Develop evaluation across sensor corruption and dynamics mismatch, progressing from GPU-accelerated simulation toward hardware-in-the-loop and underwater trials."
       }
-    ]
+    ],
+    "evaluation": "Planned evaluation will measure task success, collision and constraint violations, uncertainty calibration, and closed-loop latency. These objectives extend the published navigation and perception results; calibrated risk estimates and cross-robot transfer are future work."
   },
   "learning": [
     {
@@ -200,6 +243,7 @@
     {
       "year": "2026",
       "title": "Unified Planning–Learning for UUV Navigation",
+      "venue": "IROS 2026",
       "description": "An observation-only autonomy stack combining sonar occupancy mapping, clearance-aware global planning, behavior-tree-guided PPO, and a latent world model for dynamic underwater navigation.",
       "technologies": ["Isaac Sim", "PPO", "Behavior Trees", "Sonar Mapping", "World Models"],
       "url": "project.html?id=planning-learning-uuv",
@@ -210,6 +254,7 @@
     {
       "year": "2026",
       "title": "Vision-based Control for Real-time UUV Operations",
+      "venue": "IFAC 2026",
       "description": "A fully onboard pipeline for net-relative and global localisation, autonomous net following, dense monocular depth, and continuous volumetric mapping in aquaculture environments.",
       "technologies": ["ROS", "TRUDepth", "FFT Perception", "Wavemap", "BlueROV2"],
       "url": "project.html?id=vision-uuv",
@@ -236,6 +281,7 @@
     {
       "year": "2024–2025",
       "title": "Advancing Map-less Underwater Navigation",
+      "venue": "ICRA 2025",
       "description": "A comparative investigation of A2C, PPO, and TRPO with multimodal sensor fusion and reward design for resilient low-cost underwater navigation.",
       "technologies": [
         "Reinforcement Learning",
@@ -440,30 +486,31 @@
       "year": 2026,
       "title": "Unified Planning–Learning Framework for Robust UUV Navigation Under Partial Observability",
       "authors": "Md Ether Deowan and Eleni Kelasidi",
-      "venue": "arXiv preprint, arXiv:2608.05365",
-      "status": "Preprint",
+      "venue": "2026 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)",
+      "status": "Conference paper",
       "links": [
         {
-          "label": "Abstract",
+          "label": "Full text (arXiv)",
           "url": "https://arxiv.org/abs/2608.05365"
         },
         {
           "label": "PDF",
           "url": "https://arxiv.org/pdf/2608.05365"
         }
-      ]
+      ],
+      "description": "Hybrid navigation under partial observability: sonar occupancy mapping, clearance-aware planning, behaviour-tree-guided PPO, and latent predictive features. Evaluation is simulation-based."
     },
     {
       "year": 2026,
       "date": "2026-08-05",
       "title": "A Vision-based Control Framework for Real-time Autonomous UUV Operations",
       "authors": "Erik Tjærand Frøland, Marco Job, Md Ether Deowan, and Eleni Kelasidi",
-      "venue": "arXiv preprint, arXiv:2608.04723",
-      "status": "Preprint",
+      "venue": "IFAC World Congress 2026",
+      "status": "Conference paper",
       "description": "A fully integrated vision-based framework for real-time UUV localisation, autonomous navigation, and continuous 3D mapping in dynamic, visually challenging environments, validated on synthetic ground-truth datasets and onboard an UUV during autonomous net-relative navigation experiments.",
       "links": [
         {
-          "label": "Abstract",
+          "label": "Full text (arXiv)",
           "url": "https://arxiv.org/abs/2608.04723"
         },
         {
@@ -480,14 +527,15 @@
       "year": 2025,
       "title": "Symbolic Regression for Dynamic Tether Modeling in Underwater Robotics",
       "authors": "Md Ether Deowan, Martin Filliung, Nicolas Boizot, and Claire Dune",
-      "venue": "HAL open science archive, hal-05234077",
-      "status": "Research preprint",
+      "venue": "IEEE CASE Workshop on Data-Driven Modelling and Control for Maritime Robotics",
+      "status": "Workshop paper",
       "links": [
         {
-          "label": "HAL record",
+          "label": "Full text (HAL)",
           "url": "https://hal.science/hal-05234077"
         }
-      ]
+      ],
+      "description": "Workshop contribution on symbolic regression for modelling underwater tether dynamics."
     },
     {
       "year": 2025,
@@ -496,6 +544,10 @@
       "venue": "2025 IEEE International Conference on Robotics and Automation (ICRA), pp. 11270–11277",
       "status": "Conference paper",
       "links": [
+        {
+          "label": "Publisher",
+          "url": "https://doi.org/10.1109/ICRA55743.2025.11127836"
+        },
         {
           "label": "arXiv",
           "url": "https://arxiv.org/abs/2405.07189"
@@ -508,7 +560,8 @@
           "label": "DBLP",
           "url": "https://dblp.org/rec/journals/corr/abs-2405-07189"
         }
-      ]
+      ],
+      "doi": "10.1109/ICRA55743.2025.11127836"
     },
     {
       "year": 2023,

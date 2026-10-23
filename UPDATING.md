@@ -37,13 +37,18 @@ Add an entry to `publications`:
 ```
 
 The Publications page groups entries by year automatically. The `doi` field is
-optional.
+optional. Keep `status` and `venue` current; use `Workshop paper` for workshop
+contributions and retain arXiv/HAL links as full-text links after publication.
+Research highlights should name the author role and evaluation scope (simulation,
+laboratory, or field), with planned work described as a research direction.
 
 ## Update biography, employment, or education
 
 - Biography and contact: `profile`
 - External profiles: `links`
 - Research areas: `researchThemes`
+- Selected contributions and scoped results: `researchHighlights`
+- Research aims and evaluation plans: `researchProgram.directions` and `researchProgram.evaluation`
 - Employment: `experience`
 - Degrees: `education`
 - Technical capabilities: `skills` (retained in the data; hidden while `display.showSkills` is `false`)
