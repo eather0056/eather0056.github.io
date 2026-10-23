@@ -11,36 +11,6 @@ const themeIcons = [
 ];
 const themeCard = (theme, index) => `<article class="card theme-card"><div class="theme-head"><span class="theme-icon" aria-hidden="true">${themeIcons[index % themeIcons.length]}</span><span class="card-number">0${index + 1}</span></div><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></article>`;
 
-function animateImpactCounts(container) {
-  const nodes = [...container.querySelectorAll(".impact-grid strong")];
-  const parsed = nodes.map((node) => {
-    const match = node.textContent.match(/\d+/);
-    if (!match) return null;
-    return { node, target: Number(match[0]), prefix: node.textContent.slice(0, match.index), suffix: node.textContent.slice(match.index + match[0].length) };
-  });
-  const run = () => {
-    parsed.forEach((item) => {
-      if (!item) return;
-      const start = performance.now();
-      const duration = 900;
-      const step = (now) => {
-        const progress = Math.min(1, (now - start) / duration);
-        const eased = 1 - (1 - progress) ** 3;
-        item.node.textContent = `${item.prefix}${Math.round(item.target * eased)}${item.suffix}`;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    });
-  };
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
-  const strip = container.querySelector(".impact-strip");
-  if (!strip) return;
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => { if (entry.isIntersecting) { run(); io.disconnect(); } });
-  }, { threshold: 0.4 });
-  io.observe(strip);
-}
-
 function projectCard(project) {
   const isExternal = project.url?.startsWith("http");
   const title = project.url ? (isExternal ? externalLink(project.url, project.title) : `<a href="${escapeHtml(project.url)}">${escapeHtml(project.title)}</a>`) : escapeHtml(project.title);
@@ -52,9 +22,22 @@ function timeline(items, type) {
   return `<div class="timeline">${items.map((item) => `<article class="timeline-item"><p class="timeline-date">${period(item)}</p><div><h3>${escapeHtml(type === "education" ? item.degree : item.role)}</h3><p class="timeline-org">${escapeHtml(type === "education" ? item.institution : item.organization)} · ${escapeHtml(item.location)}</p>${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ""}</div></article>`).join("")}</div>`;
 }
 
+function profileSidebar(data) {
+  const icons = {
+    email: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/>',
+    profile: '<circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2"/>',
+    scholar: '<path d="m2 9 10-6 10 6-10 6zM6 12v6c4 3 8 3 12 0v-6M22 9v9"/>',
+    link: '<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/>',
+  };
+  const icon = (key) => `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${icons[key]}</svg>`;
+  return `<aside class="academic-sidebar" aria-label="Profile"><img class="sidebar-photo" src="assets/images/IMG_0773.png" alt="Portrait of ${escapeHtml(data.profile.name)}" width="1100" height="1308"><h2 class="sidebar-name">${escapeHtml(data.profile.name)}</h2><p class="sidebar-role">${escapeHtml(data.profile.title)}</p><p class="sidebar-affiliation">${escapeHtml(data.profile.affiliation)}</p><p class="sidebar-location">${escapeHtml(data.profile.location)}</p><ul class="sidebar-links"><li>${icon('email')}<a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></li>${data.links.filter((link) => link.label !== 'Legacy portfolio').map((link) => `<li>${icon(link.label === 'Google Scholar' ? 'scholar' : link.label === 'NTNU profile' ? 'profile' : 'link')}${externalLink(link.url, link.label)}</li>`).join('')}<li>${icon('profile')}<a href="cv.html">Curriculum vitae</a></li></ul><p class="sidebar-advisor"><span>Supervised by</span>${escapeHtml(data.profile.supervisor)}</p></aside>`;
+}
+
 function renderHome(data) {
-  contentRoot.innerHTML = `<section class="hero"><div class="container hero-grid"><div class="hero-copy"><p class="eyebrow">${escapeHtml(data.profile.affiliation)}</p><h1>${escapeHtml(data.profile.name)}</h1><p class="hero-role">${escapeHtml(data.profile.title)}</p><p class="lead">${escapeHtml(data.profile.tagline)}</p><div class="status-pill"><span class="status-dot" aria-hidden="true"></span>Open to research collaboration</div><div class="button-row"><a class="button" href="research.html">Explore my research <span aria-hidden="true">→</span></a><a class="button button-secondary" href="contact.html">Get in touch</a></div><div class="profile-links">${data.links.slice(0, 4).map((link) => externalLink(link.url, link.label)).join("")}</div></div><figure class="portrait-frame"><div class="portrait-accent" aria-hidden="true"></div><img class="profile-photo" src="assets/images/IMG_0773.png" alt="Portrait of Md Ether Deowan" width="1100" height="1308"><figcaption><strong>Field Robotics Lab</strong><span>NTNU · Trondheim, Norway</span></figcaption></figure></div></section><section class="impact-strip"><div class="container impact-grid"><div><strong>${data.publications.length}+</strong><span>Publications</span></div><div><strong>${data.projects.filter((project) => !project.archive).length}</strong><span>Selected projects</span></div><div><strong>3</strong><span>Research themes</span></div><div><strong>2025—</strong><span>PhD at NTNU</span></div></div></section><section class="section section-muted"><div class="container"><div class="section-intro"><div><p class="eyebrow">Current work</p><h2>Building autonomy for robots in the real world.</h2></div><p>My research connects perception, localisation, and control for underwater and field robots operating under uncertainty.</p></div><div class="card-grid section-compact">${data.researchThemes.map(themeCard).join("")}</div></div></section><section class="section"><div class="container"><div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Recent projects</h2></div><a class="text-link" href="projects.html">View all projects <span aria-hidden="true">→</span></a></div><div class="card-grid">${data.projects.filter((project) => !project.archive).slice(0, 3).map(projectCard).join("")}</div></div></section><section class="section callout-section"><div class="container callout"><div><p class="eyebrow">Collaboration</p><h2>Interested in field robotics and autonomous systems?</h2></div><a class="button button-light" href="contact.html">Let’s connect <span aria-hidden="true">→</span></a></div></section>`;
-  animateImpactCounts(contentRoot);
+  const selected = data.projects.filter((project) => !project.archive).slice(0, 3);
+  const themes = data.researchThemes.map((theme, index) => `<article class="research-box"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p><details><summary>Explore related work</summary><ul><li><a href="research.html">Research programme and collaboration</a></li>${selected[index] ? `<li><a href="${escapeHtml(selected[index].url)}">${escapeHtml(selected[index].title)}</a></li>` : ''}<li><a href="publications.html">Publications</a></li></ul></details></article>`).join('');
+  const recent = [...data.publications].sort((a, b) => Number(b.year) - Number(a.year)).slice(0, 3);
+  contentRoot.innerHTML = `<section class="home-about"><h1 class="academic-section-title">About</h1>${data.profile.bio.map((text) => `<p>${escapeHtml(text)}</p>`).join('')}<p>My current research focuses on <a href="research.html">${escapeHtml(data.researchProgram.title)}</a>, under the supervision of ${escapeHtml(data.profile.supervisor)}.</p></section><section><h2 class="academic-section-title">Research</h2><div class="research-boxes">${themes}</div></section><section><h2 class="academic-section-title">Recent publications</h2><ul class="academic-updates">${recent.map((paper) => `<li><span class="update-year">${escapeHtml(paper.year)}</span><div><a href="${escapeHtml(paper.links?.[0]?.url || 'publications.html')}">${escapeHtml(paper.title)}</a><p>${escapeHtml(paper.venue || paper.status || '')}</p></div></li>`).join('')}</ul><a class="text-link" href="publications.html">All publications <span aria-hidden="true">→</span></a></section><section><h2 class="academic-section-title">Teaching &amp; service</h2><ul class="academic-updates">${data.professionalService.map((item) => `<li><span class="update-year">${escapeHtml(item.year)}</span><div>${escapeHtml(item.role)}, ${escapeHtml(item.organization)}</div></li>`).join('')}</ul><p><a href="learning.html">Learning notes and robotics notebooks</a> · <a href="cv.html">Full experience and education</a></p></section>`;
 }
 
 function renderAbout(data) {
@@ -106,4 +89,11 @@ function renderContact(data) {
 }
 
 const renderers = { home: renderHome, about: renderAbout, research: renderResearch, publications: renderPublications, projects: renderProjects, learning: renderLearning, cv: renderCv, contact: renderContact };
-if (contentRoot) fetch("assets/data/site.json").then((response) => { if (!response.ok) throw new Error(`Could not load site data (${response.status})`); return response.json(); }).then((data) => { renderers[document.body.dataset.page]?.(data); window.initScrollReveal?.(contentRoot); }).catch((error) => { contentRoot.innerHTML = `<section class="section"><div class="container"><h1>Content unavailable</h1><p>${escapeHtml(error.message)}</p></div></section>`; });
+if (contentRoot) fetch("assets/data/site.json").then((response) => { if (!response.ok) throw new Error(`Could not load site data (${response.status})`); return response.json(); }).then((data) => { renderers[document.body.dataset.page]?.(data);
+  const pageContent = document.createElement("div");
+  pageContent.className = "academic-content";
+  while (contentRoot.firstChild) pageContent.appendChild(contentRoot.firstChild);
+  contentRoot.classList.add("academic-layout", "container");
+  contentRoot.innerHTML = profileSidebar(data);
+  contentRoot.appendChild(pageContent);
+  window.initScrollReveal?.(contentRoot); }).catch((error) => { contentRoot.innerHTML = `<section class="section"><div class="container"><h1>Content unavailable</h1><p>${escapeHtml(error.message)}</p></div></section>`; });
