@@ -34,7 +34,7 @@ if (footer) {
   footer.innerHTML = `
     <div class="container footer-inner">
       <span>&copy; ${new Date().getFullYear()} Md Ether Deowan</span>
-      <span>PhD Candidate · Field Robotics Lab, NTNU</span>
+      <span>PhD Candidate · <a href="https://www.ntnu.edu/frl" target="_blank" rel="noreferrer">Field Robotics Lab, NTNU</a></span>
     </div>`;
 }
 

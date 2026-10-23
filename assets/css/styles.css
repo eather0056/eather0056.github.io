@@ -821,3 +821,5 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 .research-highlight .highlight-evidence { padding-top: 10px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 14px; }
 .research-direction-intro { color: var(--text-muted); }
 .case-authors { max-width: 850px; color: #d7e5e2; font-size: 14px; }
+
+.sidebar-affiliation > a:first-child { margin-top: 0; color: var(--accent); font-size: inherit; }

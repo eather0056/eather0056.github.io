@@ -13,12 +13,13 @@ const themeCard = (theme, index) => `<article class="card theme-card"><div class
 
 const supervisorLink = (profile) => externalLink(profile.supervisorUrl, profile.supervisor);
 const institutionLink = (profile) => externalLink(profile.institutionUrl, profile.institution);
-const affiliationLink = (profile) => `${escapeHtml(profile.affiliation)}<br>${institutionLink(profile)}`;
+const affiliationLink = (profile) => `${externalLink(profile.affiliationUrl, profile.affiliation)}<br>${institutionLink(profile)}`;
 function biography(profile, className = "") {
   return profile.bio.map((text) => {
     const linked = escapeHtml(text)
       .replace(escapeHtml(profile.institution), institutionLink(profile))
-      .replace(escapeHtml(profile.supervisor), supervisorLink(profile));
+      .replace(escapeHtml(profile.supervisor), supervisorLink(profile))
+      .replace("Field Robotics Lab", externalLink(profile.affiliationUrl, "Field Robotics Lab"));
     return `<p${className ? ` class="${className}"` : ""}>${linked}</p>`;
   }).join("");
 }
@@ -37,7 +38,7 @@ function projectCard(project) {
 }
 
 function timeline(items, type) {
-  return `<div class="timeline">${items.map((item) => `<article class="timeline-item"><p class="timeline-date">${period(item)}</p><div><h3>${escapeHtml(type === "education" ? item.degree : item.role)}</h3><p class="timeline-org">${escapeHtml(type === "education" ? item.institution : item.organization)} · ${escapeHtml(item.location)}</p>${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ""}</div></article>`).join("")}</div>`;
+  return `<div class="timeline">${items.map((item) => `<article class="timeline-item"><p class="timeline-date">${period(item)}</p><div><h3>${escapeHtml(type === "education" ? item.degree : item.role)}</h3><p class="timeline-org">${type === "education" ? escapeHtml(item.institution) : item.organizationUrl ? externalLink(item.organizationUrl, item.organization) : escapeHtml(item.organization)} · ${escapeHtml(item.location)}</p>${item.summary ? `<p>${escapeHtml(item.summary)}</p>` : ""}${item.detail ? `<p>${escapeHtml(item.detail)}</p>` : ""}</div></article>`).join("")}</div>`;
 }
 
 function profileSidebar(data) {

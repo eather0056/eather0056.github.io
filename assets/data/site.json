@@ -8,6 +8,7 @@
     "name": "Md Ether Deowan",
     "title": "PhD Candidate in Field Robotics",
     "affiliation": "Field Robotics Lab, NTNU",
+    "affiliationUrl": "https://www.ntnu.edu/frl",
     "department": "Department of Mechanical and Industrial Engineering",
     "location": "Trondheim, Norway",
     "email": "md.e.deowan@ntnu.no",
@@ -102,7 +103,7 @@
         "role": "Main supervisor",
         "url": "https://www.ntnu.no/ansatte/eleni.kelasidi",
         "affiliation": "Field Robotics Lab · NTNU",
-        "affiliationUrl": "https://www.ntnu.no/"
+        "affiliationUrl": "https://www.ntnu.edu/frl"
       },
       {
         "name": "Professor Martin Ludvigsen",
@@ -171,6 +172,7 @@
       "end": "Present",
       "role": "PhD Candidate",
       "organization": "Field Robotics Lab, NTNU",
+      "organizationUrl": "https://www.ntnu.edu/frl",
       "location": "Trondheim, Norway",
       "summary": "Researching navigation and decision autonomy for underwater and field robotic systems under the supervision of Professor Eleni Kelasidi."
     },
