@@ -11,6 +11,24 @@ const themeIcons = [
 ];
 const themeCard = (theme, index) => `<article class="card theme-card"><div class="theme-head"><span class="theme-icon" aria-hidden="true">${themeIcons[index % themeIcons.length]}</span><span class="card-number">0${index + 1}</span></div><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p></article>`;
 
+const supervisorLink = (profile) => externalLink(profile.supervisorUrl, profile.supervisor);
+const institutionLink = (profile) => externalLink(profile.institutionUrl, profile.institution);
+const affiliationLink = (profile) => `${escapeHtml(profile.affiliation)}<br>${institutionLink(profile)}`;
+function biography(profile, className = "") {
+  return profile.bio.map((text) => {
+    const linked = escapeHtml(text)
+      .replace(escapeHtml(profile.institution), institutionLink(profile))
+      .replace(escapeHtml(profile.supervisor), supervisorLink(profile));
+    return `<p${className ? ` class="${className}"` : ""}>${linked}</p>`;
+  }).join("");
+}
+const serviceList = (data) => `<div class="service-list">${data.professionalService.map((item) => `<article><span>${escapeHtml(item.year)}</span><p><strong>${escapeHtml(item.role)}</strong>, ${escapeHtml(item.organization)}</p></article>`).join("")}</div>`;
+const achievementList = (data) => `<ul class="achievement-list">${data.achievements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
+function talkCard(talk) {
+  const date = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${talk.date}T12:00:00Z`));
+  return `<article class="talk-card"><div class="talk-meta"><span>${escapeHtml(talk.type)} · ${escapeHtml(talk.conferenceShort || talk.year)}</span><time datetime="${escapeHtml(talk.date)}">${date}</time></div><h3>${escapeHtml(talk.title)}</h3><p class="talk-event">${externalLink(talk.url, talk.event)}</p><p>${escapeHtml(talk.description)}</p><p class="talk-location">${escapeHtml(talk.conference)}<br>${escapeHtml(talk.location)}</p><a class="text-link" href="${escapeHtml(talk.url)}" target="_blank" rel="noreferrer">Workshop website <span aria-hidden="true">↗</span></a></article>`;
+}
+
 function projectCard(project) {
   const isExternal = project.url?.startsWith("http");
   const title = project.url ? (isExternal ? externalLink(project.url, project.title) : `<a href="${escapeHtml(project.url)}">${escapeHtml(project.title)}</a>`) : escapeHtml(project.title);
@@ -30,18 +48,35 @@ function profileSidebar(data) {
     link: '<path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/>',
   };
   const icon = (key) => `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${icons[key]}</svg>`;
-  return `<aside class="academic-sidebar" aria-label="Profile"><img class="sidebar-photo" src="assets/images/IMG_0773.png" alt="Portrait of ${escapeHtml(data.profile.name)}" width="1100" height="1308"><h2 class="sidebar-name">${escapeHtml(data.profile.name)}</h2><p class="sidebar-role">${escapeHtml(data.profile.title)}</p><p class="sidebar-affiliation">${escapeHtml(data.profile.affiliation)}</p><p class="sidebar-location">${escapeHtml(data.profile.location)}</p><ul class="sidebar-links"><li>${icon('email')}<a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></li>${data.links.filter((link) => link.label !== 'Legacy portfolio').map((link) => `<li>${icon(link.label === 'Google Scholar' ? 'scholar' : link.label === 'NTNU profile' ? 'profile' : 'link')}${externalLink(link.url, link.label)}</li>`).join('')}<li>${icon('profile')}<a href="cv.html">Curriculum vitae</a></li></ul><p class="sidebar-advisor"><span>Supervised by</span>${escapeHtml(data.profile.supervisor)}</p></aside>`;
+  return `<aside class="academic-sidebar" aria-label="Profile"><img class="sidebar-photo" src="assets/images/IMG_0773.png" alt="Portrait of ${escapeHtml(data.profile.name)}" width="1100" height="1308"><h2 class="sidebar-name">${escapeHtml(data.profile.name)}</h2><p class="sidebar-role">${escapeHtml(data.profile.title)}</p><p class="sidebar-affiliation">${affiliationLink(data.profile)}</p><p class="sidebar-location">${escapeHtml(data.profile.location)}</p><ul class="sidebar-links"><li>${icon('email')}<a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></li>${data.links.filter((link) => link.label !== 'Legacy portfolio').map((link) => `<li>${icon(link.label === 'Google Scholar' ? 'scholar' : link.label === 'NTNU profile' ? 'profile' : 'link')}${externalLink(link.url, link.label)}</li>`).join('')}<li>${icon('profile')}<a href="cv.html">Curriculum vitae</a></li></ul><p class="sidebar-advisor"><span>Supervised by</span>${supervisorLink(data.profile)}</p></aside>`;
 }
 
 function renderHome(data) {
-  const selected = data.projects.filter((project) => !project.archive).slice(0, 3);
-  const themes = data.researchThemes.map((theme, index) => `<article class="research-box"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p><details><summary>Explore related work</summary><ul><li><a href="research.html">Research programme and collaboration</a></li>${selected[index] ? `<li><a href="${escapeHtml(selected[index].url)}">${escapeHtml(selected[index].title)}</a></li>` : ''}<li><a href="publications.html">Publications</a></li></ul></details></article>`).join('');
+  const projectFor = (id) => id === "bluerov2-retrieval"
+    ? data.projects.find((project) => project.url === "project-bluerov2-retrieval.html")
+    : data.projects.find((project) => project.url === `project.html?id=${id}`);
+  const themes = data.researchThemes.map((theme) => `<article class="research-box"><h3>${escapeHtml(theme.title)}</h3><p>${escapeHtml(theme.description)}</p><details><summary>Projects &amp; technical contributions</summary><ul>${(theme.projectIds || []).map(projectFor).filter(Boolean).map((project) => `<li><a href="${escapeHtml(project.url)}">${escapeHtml(project.title)}</a></li>`).join("")}<li><a href="research.html">Research programme and collaboration</a></li></ul></details></article>`).join("");
   const recent = [...data.publications].sort((a, b) => Number(b.year) - Number(a.year)).slice(0, 3);
-  contentRoot.innerHTML = `<section class="home-about"><h1 class="academic-section-title">About</h1>${data.profile.bio.map((text) => `<p>${escapeHtml(text)}</p>`).join('')}<p>My current research focuses on <a href="research.html">${escapeHtml(data.researchProgram.title)}</a>, under the supervision of ${escapeHtml(data.profile.supervisor)}.</p></section><section><h2 class="academic-section-title">Research</h2><div class="research-boxes">${themes}</div></section><section><h2 class="academic-section-title">Recent publications</h2><ul class="academic-updates">${recent.map((paper) => `<li><span class="update-year">${escapeHtml(paper.year)}</span><div><a href="${escapeHtml(paper.links?.[0]?.url || 'publications.html')}">${escapeHtml(paper.title)}</a><p>${escapeHtml(paper.venue || paper.status || '')}</p></div></li>`).join('')}</ul><a class="text-link" href="publications.html">All publications <span aria-hidden="true">→</span></a></section><section><h2 class="academic-section-title">Teaching &amp; service</h2><ul class="academic-updates">${data.professionalService.map((item) => `<li><span class="update-year">${escapeHtml(item.year)}</span><div>${escapeHtml(item.role)}, ${escapeHtml(item.organization)}</div></li>`).join('')}</ul><p><a href="learning.html">Learning notes and robotics notebooks</a> · <a href="cv.html">Full experience and education</a></p></section>`;
+  contentRoot.innerHTML = `
+    <section class="home-about">
+      <p class="eyebrow">Underwater robotics · Perception · Planning · Control</p>
+      <h1 class="profile-headline">${escapeHtml(data.profile.headline)}</h1>
+      ${biography(data.profile)}
+      <div class="profile-actions"><a href="research.html">Research programme →</a><a href="publications.html">Publications →</a><a href="contact.html">Research enquiries →</a></div>
+    </section>
+    <section><h2 class="academic-section-title">Invited talks</h2>${data.talks.slice(0, 1).map(talkCard).join("")}<p class="section-followup"><a class="text-link" href="talks.html">Talks, service &amp; achievements →</a></p></section>
+    <section><h2 class="academic-section-title">Research &amp; technical contributions</h2><div class="research-boxes">${themes}</div></section>
+    <section><h2 class="academic-section-title">Recent publications</h2><ul class="academic-updates">${recent.map((paper) => `<li><span class="update-year">${escapeHtml(paper.year)}</span><div><a href="${escapeHtml(paper.links?.[0]?.url || 'publications.html')}">${escapeHtml(paper.title)}</a><p>${escapeHtml(paper.venue || paper.status || '')}</p></div></li>`).join('')}</ul><a class="text-link" href="publications.html">All publications <span aria-hidden="true">→</span></a></section>
+    <section><h2 class="academic-section-title">Peer review &amp; professional service</h2>${serviceList(data)}<p class="section-followup"><a href="learning.html">Learning notes and robotics notebooks →</a></p></section>
+    <section><h2 class="academic-section-title">Selected achievements</h2>${achievementList(data)}</section>`;
+}
+
+function renderTalks(data) {
+  contentRoot.innerHTML = `<section><p class="eyebrow">Academic activity</p><h1>Talks, service &amp; achievements</h1><p class="lead">Invited presentations, peer review, and academic recognition.</p><nav class="page-jump-links" aria-label="On this page"><a href="#invited-talks">Invited talks</a><a href="#service">Peer review &amp; service</a><a href="#achievements">Achievements</a></nav></section><section id="invited-talks"><h2 class="academic-section-title">Invited talks</h2>${data.talks.map(talkCard).join("")}</section><section id="service"><h2 class="academic-section-title">Peer review &amp; professional service</h2>${serviceList(data)}</section><section id="achievements"><h2 class="academic-section-title">Awards &amp; achievements</h2>${achievementList(data)}</section>`;
 }
 
 function renderAbout(data) {
-  contentRoot.innerHTML = `<section class="section"><div class="container"><div class="about-grid"><img class="about-photo" src="assets/images/IMG_0773.png" alt="Md Ether Deowan" width="1100" height="1308"><div><p class="eyebrow">About</p><h1>${escapeHtml(data.profile.name)}</h1>${data.profile.bio.map((text) => `<p class="bio-copy">${escapeHtml(text)}</p>`).join("")}</div></div><div class="content-width content-center"><dl class="facts"><div><dt>Position</dt><dd>${escapeHtml(data.profile.title)}</dd></div><div><dt>Affiliation</dt><dd>${escapeHtml(data.profile.affiliation)}</dd></div><div><dt>Supervisor</dt><dd>${escapeHtml(data.profile.supervisor)}</dd></div></dl><h2>Experience</h2>${timeline(data.experience, "experience")}<h2 class="content-section-title">Education</h2>${timeline(data.education, "education")}</div></div></section>`;
+  contentRoot.innerHTML = `<section class="section"><div class="container"><div class="about-grid"><img class="about-photo" src="assets/images/IMG_0773.png" alt="Md Ether Deowan" width="1100" height="1308"><div><p class="eyebrow">About</p><h1>${escapeHtml(data.profile.name)}</h1>${biography(data.profile, "bio-copy")}</div></div><div class="content-width content-center"><dl class="facts"><div><dt>Position</dt><dd>${escapeHtml(data.profile.title)}</dd></div><div><dt>Affiliation</dt><dd>${affiliationLink(data.profile)}</dd></div><div><dt>Supervisor</dt><dd>${supervisorLink(data.profile)}</dd></div></dl><h2>Experience</h2>${timeline(data.experience, "experience")}<h2 class="content-section-title">Education</h2>${timeline(data.education, "education")}</div></div></section>`;
 }
 
 function renderResearch(data) {
@@ -81,14 +116,15 @@ function renderLearning(data) {
 }
 
 function renderCv(data) {
-  contentRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Curriculum vitae</p><h1>Experience and education</h1><p class="data-note">A privacy-reviewed downloadable PDF will be added later.</p><h2>Experience</h2>${timeline(data.experience, "experience")}<h2 class="content-section-title">Education</h2>${timeline(data.education, "education")}<h2 class="content-section-title">Skills</h2><div class="skills-grid">${data.skills.map((group) => `<section><h3>${escapeHtml(group.group)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>`).join("")}</div><h2 class="content-section-title">Professional Service</h2><div class="service-list">${data.professionalService.map((item) => `<article><span>${escapeHtml(item.year)}</span><p><strong>${escapeHtml(item.role)}</strong>, <em>${escapeHtml(item.organization)}</em></p></article>`).join("")}</div><h2 class="content-section-title">Selected achievements</h2><ul>${data.achievements.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul><p class="data-note">Website data updated ${escapeHtml(data.meta.lastUpdated)}.</p></div></section>`;
+  const skills = data.display?.showSkills === true ? `<h2 class="content-section-title">Skills</h2><div class="skills-grid">${data.skills.map((group) => `<section><h3>${escapeHtml(group.group)}</h3><ul>${group.items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul></section>`).join("")}</div>` : "";
+  contentRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Curriculum vitae</p><h1>Experience, education &amp; academic activity</h1><p class="lead">${escapeHtml(data.profile.tagline)}</p><h2>Experience</h2>${timeline(data.experience, "experience")}<h2 class="content-section-title">Education</h2>${timeline(data.education, "education")}<h2 class="content-section-title">Invited talks</h2>${data.talks.map(talkCard).join("")}<h2 class="content-section-title">Peer review &amp; professional service</h2>${serviceList(data)}<h2 class="content-section-title">Selected achievements</h2>${achievementList(data)}${skills}<p class="data-note">Updated ${escapeHtml(data.meta.cvUpdated)}.</p></div></section>`;
 }
 
 function renderContact(data) {
-  contentRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Contact</p><h1>Get in touch</h1><p class="lead">For research, collaboration, and academic enquiries.</p><dl class="facts"><div><dt>Email</dt><dd><a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></dd></div><div><dt>Affiliation</dt><dd>${escapeHtml(data.profile.department)}, ${escapeHtml(data.profile.affiliation)}</dd></div><div><dt>Location</dt><dd>${escapeHtml(data.profile.location)}</dd></div></dl><div class="profile-links profile-links-large">${data.links.map((link) => externalLink(link.url, link.label)).join("")}</div></div></section>`;
+  contentRoot.innerHTML = `<section class="section"><div class="container content-width"><p class="eyebrow">Contact</p><h1>Get in touch</h1><p class="lead">For research, collaboration, and academic enquiries.</p><dl class="facts"><div><dt>Email</dt><dd><a href="mailto:${escapeHtml(data.profile.email)}">${escapeHtml(data.profile.email)}</a></dd></div><div><dt>Affiliation</dt><dd>${escapeHtml(data.profile.department)}<br>${affiliationLink(data.profile)}</dd></div><div><dt>Location</dt><dd>${escapeHtml(data.profile.location)}</dd></div></dl><div class="profile-links profile-links-large">${data.links.map((link) => externalLink(link.url, link.label)).join("")}</div></div></section>`;
 }
 
-const renderers = { home: renderHome, about: renderAbout, research: renderResearch, publications: renderPublications, projects: renderProjects, learning: renderLearning, cv: renderCv, contact: renderContact };
+const renderers = { home: renderHome, talks: renderTalks, about: renderAbout, research: renderResearch, publications: renderPublications, projects: renderProjects, learning: renderLearning, cv: renderCv, contact: renderContact };
 if (contentRoot) fetch("assets/data/site.json").then((response) => { if (!response.ok) throw new Error(`Could not load site data (${response.status})`); return response.json(); }).then((data) => { renderers[document.body.dataset.page]?.(data);
   const pageContent = document.createElement("div");
   pageContent.className = "academic-content";

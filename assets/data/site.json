@@ -1,8 +1,9 @@
 {
   "meta": {
-    "lastUpdated": "2026-09-05",
-    "cvUpdated": "2026-08-30"
+    "lastUpdated": "2026-10-23",
+    "cvUpdated": "2026-10-23"
   },
+  "display": {"showSkills": false},
   "profile": {
     "name": "Md Ether Deowan",
     "title": "PhD Candidate in Field Robotics",
@@ -10,13 +11,17 @@
     "department": "Department of Mechanical and Industrial Engineering",
     "location": "Trondheim, Norway",
     "email": "md.e.deowan@ntnu.no",
-    "tagline": "Navigation, perception, and decision autonomy for underwater and field robotic systems.",
+    "tagline": "Robust field autonomy for underwater inspection, maintenance, and repair.",
     "bio": [
-      "Md Ether Deowan is a PhD candidate in the Field Robotics Lab at the Norwegian University of Science and Technology (NTNU), where he researches navigation and decision autonomy for underwater and field robotic systems.",
-      "He holds a BSc in Electrical and Electronics Engineering and an Erasmus Mundus Joint Master's in Marine and Maritime Intelligent Robotics, with study tracks at the University of Toulon and Jaume I University.",
-      "His work spans AI-driven perception, sensor fusion, robot control, multi-robot coordination, industrial automation, and human–robot collaboration."
+      "I am a PhD candidate in the Field Robotics Lab at the Norwegian University of Science and Technology (NTNU), supervised by Professor Eleni Kelasidi. I research navigation and decision autonomy for underwater robots, with a focus on inspection, maintenance, and repair (IMR) operations in uncertain, dynamic environments.",
+      "My work connects multimodal perception and state estimation with motion planning, reinforcement learning, and model-based control. Recent projects investigate sonar-based mapping and planning–learning navigation, onboard vision for autonomous UUV operations, and behaviour-tree mission execution for underwater retrieval.",
+      "I hold an Erasmus Mundus Joint Master’s in Marine and Maritime Intelligent Robotics from the University of Toulon and Jaume I University, and a BSc in Electrical and Electronics Engineering from AIUB. My Master’s research at LIS in Toulon examined predictive control and dynamic modelling of underwater robot chains and passive cables, building on earlier work in sensor fusion, reinforcement learning, robotic manipulation, and industrial automation."
     ],
-    "supervisor": "Professor Eleni Kelasidi"
+    "supervisor": "Professor Eleni Kelasidi",
+    "headline": "Robust autonomy for underwater robots.",
+    "institution": "Norwegian University of Science and Technology (NTNU)",
+    "institutionUrl": "https://www.ntnu.no/",
+    "supervisorUrl": "https://www.ntnu.no/ansatte/eleni.kelasidi"
   },
   "links": [
     {
@@ -43,15 +48,18 @@
   "researchThemes": [
     {
       "title": "Underwater robot autonomy",
-      "description": "Robust navigation and decision-making for underwater vehicles operating with uncertain sensing and limited communication."
+      "description": "Connecting sonar-based mapping, clearance-aware motion planning, and learned local control for underwater navigation under partial observability.",
+      "projectIds": ["planning-learning-uuv", "bluerov2-retrieval"]
     },
     {
       "title": "Multimodal perception and sensor fusion",
-      "description": "Combining sonar, vision, Doppler, inertial, and other sensing modalities for localisation, mapping, and safe control."
+      "description": "Combining vision, sonar, inertial, and range observations for state estimation, net-relative localisation, and mapping in underwater inspection.",
+      "projectIds": ["vision-uuv", "mapless-uuv"]
     },
     {
       "title": "Learning and model-based control",
-      "description": "Reinforcement learning, predictive control, dynamic modelling, and hybrid autonomy for robotic systems."
+      "description": "Investigating reinforcement learning, behaviour-tree guidance, predictive control, and dynamic models for underwater navigation and robot–cable systems.",
+      "projectIds": ["planning-learning-uuv", "mapless-uuv"]
     }
   ],
   "researchProgram": {
@@ -62,8 +70,9 @@
       {
         "name": "Professor Eleni Kelasidi",
         "role": "Main supervisor",
-        "url": "https://www.ntnu.edu/employees/eleni.kelasidi",
-        "affiliation": "Field Robotics Lab · NTNU"
+        "url": "https://www.ntnu.no/ansatte/eleni.kelasidi",
+        "affiliation": "Field Robotics Lab · NTNU",
+        "affiliationUrl": "https://www.ntnu.no/"
       },
       {
         "name": "Professor Martin Ludvigsen",
@@ -694,6 +703,20 @@
         "HMI",
         "Industrial Communication"
       ]
+    }
+  ],
+  "talks": [
+    {
+      "title": "Robust Field Autonomy for Inspection, Maintenance and Repair (IMR) Operations",
+      "type": "Invited talk",
+      "date": "2026-10-01",
+      "year": "2026",
+      "event": "AMBRE: Adaptive Manipulation: Bridging Rigid and Soft Robotics in Underwater Environments",
+      "conferenceShort": "IROS 2026",
+      "conference": "IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2026)",
+      "location": "David L. Lawrence Convention Center, Pittsburgh, USA",
+      "url": "https://sites.google.com/view/uwambre/home",
+      "description": "An invited presentation on robust field autonomy for underwater inspection, maintenance, and repair, at the AMBRE workshop bringing together marine robotics, manipulation, soft robotics, perception, and control."
     }
   ],
   "professionalService": [

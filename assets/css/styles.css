@@ -784,3 +784,28 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outli
 .research-hero .button-secondary { color: var(--accent); border-color: var(--accent); }
 /* Let long notebook equations scroll within the page on narrow screens. */
 .notebook-page mjx-container[display="true"] { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding-block: 3px; }
+
+/* Research profile, invited talks, and academic recognition. */
+.profile-headline { max-width: 650px; font-size: clamp(28px, 3.4vw, 36px); line-height: 1.2; margin: 0 0 22px; }
+.profile-actions, .page-jump-links { display: flex; flex-wrap: wrap; gap: 10px 22px; font: 500 13px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-top: 20px; }
+.talk-card { padding: 22px; border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 4px; background: var(--surface); }
+.talk-card + .talk-card { margin-top: 18px; }
+.talk-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 16px; margin-bottom: 12px; color: var(--accent); font: 500 12px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.talk-meta time { color: var(--text-muted); }
+.talk-card h3 { font-size: 19px; line-height: 1.45; margin: 0 0 12px; }
+.talk-card p { font-size: 15px; margin: 0 0 12px; }
+.talk-card .talk-event { font-weight: 600; }
+.talk-card .talk-location { color: var(--text-muted); font-size: 13px; }
+.section-followup { margin: 14px 0 0; font-size: 14px; }
+.achievement-list { padding-left: 20px; margin: 0; font-size: 15px; }
+.achievement-list li { padding: 8px 0 8px 4px; }
+.achievement-list li::marker { color: var(--accent); }
+.academic-sidebar .sidebar-affiliation { font-size: 13px; }
+.sidebar-affiliation a { display: inline-block; margin-top: 4px; color: var(--text-muted); font-size: 12px; }
+.academic-content [id] { scroll-margin-top: 24px; }
+.nav-inner { flex-wrap: wrap; padding-block: 18px; }
+@media (max-width: 520px) {
+  .talk-card { padding: 16px; }
+  .talk-card h3 { font-size: 17px; }
+  .sidebar-affiliation a { font-size: 11px; }
+}

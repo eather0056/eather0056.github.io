@@ -1,6 +1,6 @@
 # Updating the website
 
-The website is data-driven. All seven pages read from one source:
+The website is data-driven. The main profile pages read from one source:
 
 [`assets/data/site.json`](assets/data/site.json)
 
@@ -22,8 +22,7 @@ Add an entry at the beginning of the `projects` list:
 }
 ```
 
-The Projects page sorts entries by year automatically. The homepage displays
-the first three entries as selected recent work.
+The Projects page sorts entries by year automatically. The homepage links projects through each research theme’s `projectIds` list.
 
 ## Add a publication
 
@@ -47,10 +46,21 @@ optional.
 - Research areas: `researchThemes`
 - Employment: `experience`
 - Degrees: `education`
-- Technical capabilities: `skills`
-- Awards: `achievements`
+- Technical capabilities: `skills` (retained in the data; hidden while `display.showSkills` is `false`)
+- Awards: `achievements` (shown on the homepage, Talks & service page, and CV)
+- Invited presentations: `talks`
+- Peer review and professional service: `professionalService`
+- Institution and supervisor links: `profile.institutionUrl` and `profile.supervisorUrl`
 
 Update `meta.lastUpdated` whenever the content changes.
+
+## Add an invited talk
+
+Add an entry to `talks` with `title`, `type`, `date` (YYYY-MM-DD), `year`,
+`event`, `conference`, `location`, `url`, and a short `description`.
+Use the presentation title for `title` and the workshop name for `event`.
+Optionally set `conferenceShort` to a brief label such as `IROS 2026`.
+The same entry appears on the homepage, Talks & service page, and CV.
 
 ## Validate before publishing
 
